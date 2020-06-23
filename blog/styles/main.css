@@ -1,0 +1,63 @@
+/************************************************************
+* Name: main.css
+* Purpose: Primary stylesheet for blog
+* Author:   Anthony McGrath
+* Date Created: 23/06/2020
+*************************************************************
+* font-family: 'Nova Cut', cursive;
+* font-family: 'Oxygen', sans-serif;
+*************************************************************/
+
+:root{
+    --theme-bg: rgba(109, 1, 117, 0.1);
+    --font-color: black;
+    --headings: rgba(109, 1, 117, 1);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    font-family: Oxygen, sans-serif;
+    color: black;
+    color: var(--font-color);
+    background-color: #efefef;
+    background-color: var(--theme-bg);
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: var(--headings);
+    font-family: 'Nova Cut', cursive;
+}
+
+section {
+    width: 80vw;
+    margin: 0px auto;
+    border-radius: 10px;
+    padding: 1em;
+    margin-top: 2em;
+    background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.4));
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+}
+
+.reference {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.red-text {
+    color: red;
+}
+footer {
+    font-size: 0.8em;
+    width: 80vw;
+    margin: 0px auto;
+}
+
+
+@media screen and (max-width: 600px) {
+    section {
+        width: 100vw;
+    }
+}
