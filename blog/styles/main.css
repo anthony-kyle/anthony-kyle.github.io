@@ -4,7 +4,7 @@
 * Author:   Anthony McGrath
 * Date Created: 23/06/2020
 *************************************************************
-* font-family: 'Nova Cut', cursive;
+* font-family: 'EB Garamond', serif;
 * font-family: 'Oxygen', sans-serif;
 *************************************************************/
 
@@ -12,8 +12,16 @@
     --theme-bg: rgba(109, 1, 117, 0.1);
     --font-color: black;
     --headings: rgba(109, 1, 117, 1);
+    --overlay-white: rgba(255,255,255,0.8);
+    --overlay-mid-white: rgba(255,255,255,0.5);
+    --overlay-semi-white: rgba(255,255,255,0.2);
+    --overlay-black: rgba(0,0,0,0.2);
+    --overlay-semi-black: rgba(0,0,0,0.1);
 }
 
+/**************************************************************
+/* Global styles 
+/*************************************************************/
 body {
     margin: 0px;
     padding: 0px;
@@ -27,20 +35,93 @@ body {
 }
 
 h1, h2, h3 {
+    padding-top: 0px;
+    margin-top: 0px;
     color: var(--headings);
-    font-family: 'Nova Cut', cursive;
+    font-family: 'EB Garamond', serif;;
 }
+
+a:link, a:visited {
+    color: var(--headings);
+
+}
+
+/**************************************************************
+/* Masthead
+/*************************************************************/
+header {
+    padding: 25px;
+}
+
+#masthead {
+    height: 200px;
+    width: auto;
+}
+
+/**************************************************************
+/* Navigation
+/*************************************************************/
+nav {
+    margin: 0 auto;
+    background-image: linear-gradient(to right, var(--theme-bg), rgba(109, 1, 117, 0.8), var(--theme-bg));
+}
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px 5px 5px var(--overlay-black);
+}
+
+nav ul li a:link, nav ul li a:visited {
+    display: block;
+    padding: 1em;
+    text-transform: uppercase;
+    color: var(--overlay-white);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: var(--overlay-black);
+}
+
+nav ul li.selected a {
+    background-color: var(--overlay-black);
+    cursor: default;
+}
+
+nav ul li.sub a {
+    cursor: pointer;
+}
+/**************************************************************
+/* Body Content
+/*************************************************************/
 
 section {
     width: 80vw;
     margin: 0px auto;
-    border-radius: 10px;
     padding: 1em;
-    margin-top: 2em;
-    background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.4));
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    max-width: 1024px;
 }
 
+section.wide {
+    width: auto;
+    background-color: var(--theme-bg);
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+
+.blog {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    background-color: var(--overlay-mid-white);
+    box-shadow: 0px 0px 4px var(--overlay-semi-black);
+    vertical-align: top;
+}
+.blog:last-child {
+    margin-bottom: 0em;
+}
 .reference {
     vertical-align: super;
     font-size: smaller;
@@ -49,15 +130,62 @@ section {
 .red-text {
     color: red;
 }
+
+/**************************************************************
+/* Footer
+/*************************************************************/
 footer {
     font-size: 0.8em;
-    width: 80vw;
+    width: auto;
     margin: 0px auto;
+    padding: 0.5em;
+    background-color: var(--theme-bg);
 }
 
+#to-top {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 5vw;
+    padding: 5px;
+    background-color: var(--headings);
+    border-radius: 5px 5px 0px 0px
+}
 
+#to-top img {
+    height: 20px;
+    width: auto;
+}
+
+/**************************************************************
+/* Reactive content
+/*************************************************************/
 @media screen and (max-width: 600px) {
+    #masthead {
+        height: 20vmin;
+    }
     section {
-        width: 100vw;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .blog {
+        width: 27vw;
+        padding: 1em;
+        display: inline-block;
+        max-width: 300px;
+        min-height: 120px;
+        margin-bottom: 0px;
     }
 }
