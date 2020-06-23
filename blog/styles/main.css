@@ -4,7 +4,7 @@
 * Author:   Anthony McGrath
 * Date Created: 23/06/2020
 *************************************************************
-* font-family: 'EB Garamond', serif;
+* font-family: 'Volkhov', serif;
 * font-family: 'Oxygen', sans-serif;
 *************************************************************/
 
@@ -38,7 +38,7 @@ h1, h2, h3 {
     padding-top: 0px;
     margin-top: 0px;
     color: var(--headings);
-    font-family: 'EB Garamond', serif;;
+    font-family: 'Volkhov', serif;;
 }
 
 a:link, a:visited {
