@@ -205,10 +205,6 @@ footer {
     opacity: 0;
     color: white;
     display: block;
-    
-/*    width: 100px;
-    position: absolute;
-    margin: -50px 0 0 -40px;*/
 }
 
 #to-top:hover {
@@ -230,6 +226,16 @@ footer {
     }
     section {
         width: auto;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .image, .example {
+        min-width: 305px;
+        width: auto;
+    }
+    .blog-image {
+        width: 150px;
     }
 }
 
