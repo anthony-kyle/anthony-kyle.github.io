@@ -35,15 +35,12 @@ body {
 }
 
 h1, h2, h3 {
-    padding-top: 0px;
-    margin-top: 0px;
     color: var(--headings);
     font-family: 'Volkhov', serif;;
 }
 
 a:link, a:visited {
     color: var(--headings);
-
 }
 
 /**************************************************************
@@ -97,34 +94,14 @@ nav ul li.sub a {
 /* Body Content
 /*************************************************************/
 
-section {
-    width: 80vw;
-    margin: 0px auto;
-    padding: 1em;
-    max-width: 1024px;
-}
-
-section.wide {
-    width: auto;
+.container-fluid {
     background-color: var(--theme-bg);
-    margin-bottom: 1em;
-    max-width: 100%;
 }
 
 .blog {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-top: 5px;
-    margin-bottom: 1em;
+    padding-top: 1rem;
     background-color: var(--overlay-mid-white);
-    box-shadow: 0px 0px 4px var(--overlay-semi-black);
-    vertical-align: top;
-}
-.blog:nth-of-type(1), .blog:nth-of-type(2), .blog:nth-of-type(3) {
-    margin-top: 0px;
-}
-.blog:last-child {
-    margin-bottom: 0em;
+    box-shadow: 0px 0px 4px var(--overlay-black);
 }
 .reference {
     vertical-align: super;
@@ -138,13 +115,18 @@ section.wide {
 .example {
     width: 50%;
     min-width: 400px;
-    margin: 0 auto;
+    margin: 0 auto 1em auto;
     text-align: left;
     background-color: var(--overlay-semi-white);
     padding: 1em;
 }
+.example ol {
+    margin-bottom: 0px;
+}
 .image {
-    width: 405px;
+    width: 220px;
+    min-width: 220px;
+    padding: 10px;
     background-color: var(--overlay-mid-white);
 }
 
@@ -190,8 +172,8 @@ footer {
     padding: 5px;
     background-color: var(--headings);
     border-radius: 5px 5px 0px 0px;
-    width: 35px;
-    height: 30px;
+    width: 50px;
+    height: 40px;
     transition: visibility 0s, height 0.2s, width 0.2s,  opacity 0.2s linear;
 }
 
@@ -205,10 +187,12 @@ footer {
     opacity: 0;
     color: white;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #to-top:hover {
-    width: 100px;
+    width: 85px;
     height: 50px;
     
 }
@@ -220,7 +204,7 @@ footer {
 /**************************************************************
 /* Reactive content
 /*************************************************************/
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     #masthead {
         height: 20vmin;
     }
@@ -228,7 +212,7 @@ footer {
         width: auto;
     }
 }
-
+*/
 @media screen and (max-width: 440px) {
     .image, .example {
         min-width: 305px;
@@ -248,7 +232,7 @@ footer {
         width: auto;
     }
 }
-
+/*
 @media screen and (min-width: 800px) {
     .blog {
         width: 27vw;
@@ -258,4 +242,4 @@ footer {
         min-height: 120px;
         margin-bottom: 0px;
     }
-}
+} */

@@ -3,12 +3,14 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en"></html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>My Personal Values Blog</title>
         <meta name="description" content="A blog created for the purpose of exploring self and tech and how they interact.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Oxygen&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
@@ -20,7 +22,7 @@
                 <li><a href="blog.html">Blog Entries</a></li>
             </ul>
         </nav>
-        <section>
+        <div class="container pt-3">
             <h1>Web Developer Looking for 127.0.0.1</h1>
             <p>My name is Anthony McGrath.</p>
             <p>I am a 32 year old Web Developer.</p>
@@ -31,31 +33,38 @@
             <p>PilcrowMicro is the embodiment of my style. It stems from the Pilcrow (¶), a symbol not so commonly used in todays world, but at the foundation of literary design from hand written ledgers, through the printing press, and thence to text editors in modern computing and printing. A symbol most have seen, most perhaps not knowing the history, or how this simple symbol has helped to shape the world we live in. Along with the Pilcrow comes Micro (µ). A more understood symbol denoting the small, the detailed, the underlying structure of life, leading towards where the future is leading us. Towards smaller and smaller technology and precision.</p>
 
             <p>It is when these two seemingly disparate symbols are united, we can see the underlying foundation for the world as we know it, the creative design, through structure and painstaking accuracy, to form something that is not appreciated because of who made it, but is appreciated for being what it is. This is what I strive to achieve with my work. Something that can exist on it’s own, and all who see it know it and enjoy it.</p>
-        </section>
-        <section class="wide">
-            <section>
-                <aside class="blog">
-                    <h3><a href="sprint2-cultural.html">Learning Reflection</a></h3>
-                    <p>A blog entry where I reflect on my goals, hopes, and aspirations. <a href="sprint2-cultural.html">Read More...</a></p>
-                </aside>
-                <aside class="blog">
-                    <h3><a href="sprint2_technical.html">Technical Blog</a></h3>
-                    <p>The Difference Between Relative, Absolute and Fixed Positioning. <a href="sprint2_technical.html">Read More...</a></p>
-                </aside>
-                <aside class="blog">
-                    <h3><a href="sprint1-cultural.html">My Core Values?</a></h3>
-                    <p>When first asked this question I honestly struggled. I have never sat down and quantified this before. <a href="sprint1-cultural.html">Read More...</a></p>
-                </aside>
-                <aside class="blog">
-                    <h3><a href="responses.html">What People Say</a></h3>
-                    <p>Anthony is an ever evolving man. He always strives to be the best person he can be. His key values <a href="responses.html">Read More...</a></p>
-                </aside>
-            </section>    
-        </section>
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="blog col-sm mb-2 ml-2">
+                        <h3><a href="sprint2-cultural.html">Learning Reflection</a></h3>
+                        <p>A blog entry where I reflect on my goals, hopes, and aspirations. <a href="sprint2-cultural.html">Read More...</a></p>
+                    </div>
+                    <div class="blog col-sm mb-2 ml-2">
+                        <h3><a href="sprint2_technical.html">Technical Blog</a></h3>
+                        <p>The Difference Between Relative, Absolute and Fixed Positioning. <a href="sprint2_technical.html">Read More...</a></p>
+                    </div>
+                    <div class="blog col-sm mb-2 ml-2">
+                        <h3><a href="sprint1-cultural.html">My Core Values?</a></h3>
+                        <p>When first asked this question I honestly struggled. I have never sat down and quantified this before. <a href="sprint1-cultural.html">Read More...</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="blog col-sm mb-2 ml-2">
+                        <h3><a href="responses.html">What People Say</a></h3>
+                        <p>Anthony is an ever evolving man. He always strives to be the best person he can be. His key values <a href="responses.html">Read More...</a></p>
+                    </div>
+                </div>
+            </div>    
+        </div>
        
         
         <footer><p>PilcrowMicro, Logo, Web design and Content &copy; Anthony McGrath 2020</p></footer>
         <div id="to-top"><a href="#top"><img src="images/caret.png" alt="To Top"><span class="tooltip">Jump to Top</span></a></div>
         <script src="" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -8,7 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>My Personal Values Blog - Responses</title>
         <meta name="description" content="A blog entry containing my friends and families responses on who I am.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Oxygen&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
@@ -20,7 +21,7 @@
                 <li class="selected sub"><a href="blog.html">Blog Entries</a></li>
             </ul>
         </nav>
-        <section>
+        <div class="container pt-3 pb-3">
             <h1>The Difference Between Relative, Absolute and Fixed Positioning</h1>
             <p>If you're reading this, at some point you will have come across the CSS property "Position"</p>
             <div class="example">
@@ -31,9 +32,9 @@
                 </code>
             </div>
             <p>What is position? and what do these values mean and how do they behave you may be asking? Keep reading to find out</p>
-        </section>
-        <section class="wide">
-            <section>
+        </div>
+        <div class="container-fluid pt-3 pb-3">
+            <div class="container">
                 <h2>What is Position?</h2>
                 <p>Position is exactly that, the position of a an object on the page. If you think about any object on a website it has a position. Take the following list for example.</p>
                 <div class="example">
@@ -46,14 +47,14 @@
                 <p>You look at a list, especially a numbered list like the one above and you may say, "well obviously the first item is at the top, why do I need a property for that?", and this is an excellent question.</p>
                 <p>The purpose of the position property, is not to identify where an object is, it is to be able to put the position where you want it to go, and the value you select for it controls how that effects the rest of the page.</p>
                 <p>A key thing to know when dealing with the position property, is that once you apply a position property to an object it is moved out of the "flow" of the web page. An example of this is if you had a magazine article and you cut a picture out of the page. You could put the image in the exact same place as you cut it out, or you could put it anywhere on the page or even completely off the page. You are able to put the image you have cut anywhere you want without affecting the rest of the page. This is what using the position property achieves on a website.</p>
-            </section>
-        </section>
-        <section>
+            </div>
+        </div>
+        <div class="container pt-3 pb-3">
             <h2>Relative Positioning</h2>
             <p>Every object takes up a certain amount of real estate on your screen. Take these photos of a ridiculously cute kitten</p>
             <div class="example image">
                 <img class="blog-image" src="images/kitten.jpg" alt="ridiculously cute kitten">
-                <img class="blog-image" src="images/kitten2.jpg" alt="another ridiculously cute     kitten">
+                <img class="blog-image" src="images/kitten2.jpg" alt="another ridiculously cute kitten">
             </div>
             <p>They are both positioned normally without having any css positioning applied to them. They both take up the same amount of space, and as html is displaying them natively they simply sit next to one another.</p>    
             <p>But what if I wanted the photo's to be at different places? I could use relative positioning. Relative positioning shifts an objects location on the page relative to it's starting position. So if I wanted to move the second cat photo down and to the left I would use the following code</p>
@@ -72,10 +73,10 @@
                 <img class="blog-image relative" src="images/kitten.jpg" alt="ridiculously cute kitten">
                 <img class="blog-image" src="images/kitten2.jpg" alt="another ridiculously cute     kitten">
             </div>
-            <p>As you can see, the first kitten photo has been moved down 30 pixels and to the right 30 pixels. The thing that you should also notice, is that the padding around the image is now different, with the bottom of the image sticking out through the bottom of the box. This is because as I mentioned above with the magazine example, it is as if you have cut the image out and you are moving it around above the page. So the hole where the image came from is still there, and any padding or margin on the object are still applied to where the hole is, but the image itself is able to be put anywhere with the instructions moving the image from it's original position.</p>
-        </section>
-        <section class="wide">
-            <section>
+            <p>As you can see, the first kitten photo has been moved down 30 pixels and to the right 30 pixels. The thing that you should also notice, is that the padding around the image is now different, with the right of the image sticking out past the side of the box. This is because as I mentioned above with the magazine example, it is as if you have cut the image out and you are moving it around above the page. So the hole where the image came from is still there, and any padding or margin on the object are still applied to where the hole is, but the image itself is able to be put anywhere with the instructions moving the image from it's original position.</p>
+        </div>
+        <div class="container-fluid pt-3 pb-3">
+            <div class="container">
                 <h2>Absolute Positioning</h2>
                 <p>Absolute positioning is very similar to Relative positioning with a simple difference. Positioning an object absolutely completely removes it from it's location on the page and positions it at the specified locations relative to the page.</p>
                 <div class="example">
@@ -107,9 +108,9 @@
                 <p>Have you seen that image before? Did you follow the code to figure it out? The image is positioned absolutely, on the top right corner of the page. You saw it when you first loaded the page. I told you it would make sense later.</p>
                 <p>From this example you can see exactly how absolute positioning works. Even though the image was located inside the first div, you could see no trace of it there. Being absolutely positioned removes the entire object from the page, and places it where you specify. The difference between relative positioning and absolute, is unlike relative positioning the other objects in page, move into the place that was previously occupied by the absolute object. Which is why there was no space where the picture came from in the example div.</p>
 
-            </section>
-        </section>
-        <section>
+            </div>
+        </div>
+        <div class="container pt-3 pb-3">
             <h2>Fixed Positioning</h2>
             <p>Fixed positioning works almost identically to absolute positioning. It completely removes the object from flow, and the rest of the page fills in the gap. It then places the object where you tell it. The difference however lies in the fact that a fixed objects position is relative to the screen not the webpage.</p>
             <p>"What's the difference between the screen and the webpage?" you may ask, The difference is, the screen is always the screen. The dimensions do not change (unless you resize your window), the top of the screen is always the top, the bottom is always the bottom. No matter how far you scroll on a web page, the bottom of the screen is still the bottom of the screen.</p>
@@ -127,7 +128,7 @@
                 </code>
             </div>
             <p>I hope that you enjoyed reading this and have formed a stronger understanding on what the css position property does, and how to use it.</p>
-        </section>
+        </div>
         
         <footer>
             <p>Cute Kitten Photos by <a href="https://unsplash.com/@ramche?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ramiz Dedaković</a> and <a href="https://unsplash.com/@enka80?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nine Köpfer</a> on <a href="https://unsplash.com/">Unsplash</a></span></p>
@@ -135,5 +136,8 @@
         </footer>
         <div id="to-top"><a href="#top"><img src="images/caret.png" alt="To Top"><span class="tooltip">Jump to Top</span></a></div>
         <script src="" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </body>
 </html>
