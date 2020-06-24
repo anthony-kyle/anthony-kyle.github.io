@@ -131,6 +131,43 @@ section.wide {
     color: red;
 }
 
+.example {
+    width: 50%;
+    min-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--overlay-semi-white);
+    padding: 1em;
+}
+.image {
+    width: 405px;
+    background-color: var(--overlay-mid-white);
+}
+
+.comment {
+    color: forestgreen;
+}
+.blog-image {
+    width: 200px;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px 0px 5px var(--overlay-black);
+}
+
+.relative {
+    position: relative;
+    top: 30px; 
+    left: 30px;
+
+}
+
+.absolute {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 /**************************************************************
 /* Footer
 /*************************************************************/
@@ -143,7 +180,6 @@ footer {
 }
 
 #to-top {
-    display: none;
     position: fixed;
     bottom: 0px;
     right: 5vw;
