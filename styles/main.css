@@ -17,7 +17,6 @@
     --overlay-semi-white: rgba(255,255,255,0.2);
     --overlay-black: rgba(0,0,0,0.2);
     --overlay-semi-black: rgba(0,0,0,0.1);
-    #450460
 }
 
 /**************************************************************
@@ -33,6 +32,7 @@ body {
     background-color: #efefef;
     background-color: var(--theme-bg);
     text-align: center;
+    line-height: 1.6em;
 }
 
 h1, h2, h3 {
