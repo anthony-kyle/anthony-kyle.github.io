@@ -103,6 +103,8 @@ nav ul li.sub a {
     padding-top: 1rem;
     background-color: var(--overlay-mid-white);
     box-shadow: 0px 0px 4px var(--overlay-black);
+    position: relative;
+    padding-bottom: 1.5em;
 }
 .reference {
     vertical-align: super;
@@ -154,6 +156,14 @@ nav ul li.sub a {
     top: 0px;
     right: 0px;
 }
+
+.blog p a {
+    display: block;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
 
 /**************************************************************
 /* Footer
