@@ -9,14 +9,15 @@
 *************************************************************/
 
 :root{
-    --theme-bg: rgba(109, 1, 117, 0.1);
+    --theme-bg: rgba(64, 9, 96, 0.1);
     --font-color: black;
-    --headings: rgba(109, 1, 117, 1);
+    --headings: rgba(64, 9, 96, 1);
     --overlay-white: rgba(255,255,255,0.8);
     --overlay-mid-white: rgba(255,255,255,0.5);
     --overlay-semi-white: rgba(255,255,255,0.2);
     --overlay-black: rgba(0,0,0,0.2);
     --overlay-semi-black: rgba(0,0,0,0.1);
+    #450460
 }
 
 /**************************************************************
@@ -60,7 +61,7 @@ header {
 /*************************************************************/
 nav {
     margin: 0 auto;
-    background-image: linear-gradient(to right, var(--theme-bg), rgba(109, 1, 117, 0.8), var(--theme-bg));
+    background-image: linear-gradient(to right, var(--theme-bg), rgba(64, 9, 96, 0.8), var(--theme-bg));
 }
 nav ul {
     list-style-type: none;
