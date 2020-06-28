@@ -164,6 +164,58 @@ nav ul li.sub a {
     right: 1em;
 }
 
+.thumb {
+    margin: 0 auto 2em auto;
+    width: 250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: block;
+    border-radius: 50%;
+    border: solid var(--overlay-mid-white) 5px;
+
+    overflow: hidden;
+}
+
+.thumb-text {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 40%;
+    color: white;
+    background-color: var(--overlay-black);
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.thumb-text h3 {
+    color: white;
+}
+
+.thumb:hover .thumb-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nicole {
+    /* background-position: 55% 35%; */
+    background-image: url('../images/nicole.jpg');
+}
+
+.rhiain {
+    background-position: 55% 35%;
+    background-image: url('../images/rhiain.jpg');
+}
+.queene {
+    background-position: 55% 35%;
+    background-image: url('../images/queene.jpg');
+}
+.dave {
+    background-position: 55% 35%;
+    background-image: url('../images/dave.jpg');
+}
 
 /**************************************************************
 /* Footer
