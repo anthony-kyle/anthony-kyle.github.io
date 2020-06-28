@@ -276,7 +276,7 @@ footer {
     }
 }
 */
-@media screen and (max-width: 440px) {
+/* @media screen and (max-width: 440px) {
     .image, .example {
         min-width: 305px;
         width: auto;
@@ -284,7 +284,7 @@ footer {
     .blog-image {
         width: 150px;
     }
-}
+} */
 
 @media screen and (min-width: 600px) {
     nav ul li {
