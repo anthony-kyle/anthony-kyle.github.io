@@ -187,7 +187,7 @@ nav ul li.sub a {
     padding-top: 40%;
     color: white;
     background-color: var(--overlay-black);
-    transition: visibility 0s, opacity 0.5s;
+    transition: visibility 0.5s, opacity 0.5s;
 }
 
 .thumb-text h3 {
