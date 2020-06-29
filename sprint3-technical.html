@@ -48,6 +48,7 @@
             <div class="container">
                 <h3>How Does JavaScript "Drive" a Website</h3>
                 <p>JavaScript controls a website, by interacting with the DOM, or Document Object Model. In this, every element on a webpage from the browser window itself, to the individual element tags, are what are referred to as Objects.</p>
+                <h4>Objects</h4>
                 <p>Objects are essentially what you would think of as an object. A thing that you can identify, and which you "know" things about.</p>
                 <img src="images/blocks.png" alt="Childrens Building Blocks" class="png-shadow mt-2 mb-4 eg-img">
                 <p>Take the above childrens building blocks toy. We know that these are building blocks just by looking at them, we know they are made of wood. We know that there are six of them.</p>
@@ -74,6 +75,93 @@ var block = {
                 </div> 
                 <p>In the above example I demonstrated creating two objects in JavaScript, the first is the Toy "childrensBlocks", in here we have a description, of what "childrensBlocks" are, what is contained in the "childrensBlocks" toy, and how many of them are in the toy. You will notice that the contents of childrensBlocks is another object called "block". Which we have a description, material, how many sides and the dimensions of the sides which allow us to understand the shape of the block.</p>
                 <p>This is how objects work, they are organised "things" which have properties, which can be read, manipulated, or changed with JavaScript. The key is that <em>EVERYTHING</em> is an object, and has these properties. From ones that you create as above, to &lt;p&gt; tags, to the browser window. Everything is an object and can be manipulated with JavaScript.</p>
+                <p>Objects are far larger than what I have been able to briefly summarise here, they have endless possibilities in what they can do. As not only can you store data in "key":"value" pairs, but you can actually add functions/methods to an object definition which can be called on any object of that type that you create in the future.</p>
+            </div>
+        </div>
+        <div class="container pt-5 pb-5">
+            <h4>Arrays</h4>
+            <p>A way of storing data that is different to an object is by using arrays.</p>
+            <p>An array is a list of items in a single variable. These items can be any format and any order. An example of an array is a shopping list, Where you write down a list of all of the things that you need to buy. When finding information in an array, you can find it one of two ways, you can read each line to find the one that matches the entry you are looking for, or if you know which line of the page your item is on, you can go directly to that line number to find it.</p>
+            <p>This is exactly how searching an array works, you have the option to loop through an array and search each entry for the item you are looking for, or if you know the index (line number) in the array you are looking for you can go directly there.</p>
+        
+        <div class="example code">
+            <code>
+<pre>
+<span class="comment">// Create Shopping List Array</span>
+var array = ["Apples", "Pears", "Cereal", "Bread", "Milk"];
+<span class="comment">// Create Search Toggle</span>
+var breadFound = false;
+<span class="comment">// Loop through Array while bread is not found</span>
+for (var i = 0; breadFound == false; i++){
+    <span class="comment">// Check if current entry in array is bread</span>
+    if (array[i] == "Bread"){
+        <span class="comment">// Bread found, set toggle, and buy bread </span>
+        breadFound = true;
+        buyBread();
+    }
+}
+
+<span class="comment">// OR Access Bread directly
+// We know bread is in the fourth position which is index 3
+</span>
+var bread = array[3];
+</pre>          
+            </code>
+        </div>
+        <p>You may be confused as to why we used index 3 when wanting to access the fourth property in the array. The reason for this is in programming, the first entry or item is always index 0, so while you may look at the shopping list array above and see Apples is in position 1, that is index 0. A general rule of thumb for this is to count through an array normally, and then subtract 1 to get your index number.</p>
+    </div>
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <h2>The Difference between Objects and Arrays</h2>
+            <p>In the above two sections we touched on what an object is and what an array is. And while they both store groups of data, the two are very different. They are different both in how they function, and what they are designed for.</p>
+            <p>An array is a grouping of like information. It can store a lot of information and is extremely useful when storing a lot of items together. An object on the other hand is a single entity. This single entity can have a lot of properties defined about it, but it is a single element, as opposed to an array containing details of multiple elements.</p>
+            <p>As described above, to access data from an array you can loop through it or navigate to an index, with an object you have another method of accessing the data, because an object is defined using what is called a "key": "value" pair. So just as with an array you can call an array's index, you can call an objects value by calling the "key" that is associated with it. To use the block example above, if I wanted to know what the length of the block is I would call either block.length or block["length"]. Either of these would return the value associated with length from block.</p>
+            <p>If they are so similar why do we need both? We need both because they serve very different purposes. An Object can store a boat load of information about an object, it can store related functions, details and many other things. However each object is an individual identity. Just as we could have an object called "person", that person would have a name, an age, an address, and all sorts of other information which we could obtain by calling on the key. However it cannot be two people. If we wanted two people we would need a second object called "person2".</p>
+            <p>As you can imagine, once you start dealing with multiple people in a database, or a application, you could have an infinite number of people, and creating a new object for each one would be impossible. So how do we keep track? With an array of objects.</p>
+            <p>You can create an array, in which each entry in the array is a person. Each one of those entries has the exact same keys, the same values, and the same functions accessible to them, and this is why we need both.</p>
+        </div>
+    </div>
+    <div class="container pt-5 pb-5">
+        <h2>What is the DOM?</h2>
+        <p>As stated earlier, everything is an object, and this is why it is called the DOM, or the Document Object Model. Because everything in the "document" or web page is an object.</p>
+        <p>Everything from the browser window, the page content, and each element on the page is an object with properties associated with it, just like the childrensBlocks example above.</p>
+        <p>In order to interact with the DOM, we need to call or reference a top level object, and then navigate through the DOM to find the object we want, and then manipulate the content as we wish.</p>
+        <div class="example code">
+            <code>
+<pre>
+<button id="example" value="0">Clicked 0 times</button>
+<span class="comment">// This button is made using the following code</span>
+&lt;button id=&quot;example&quot; value=&quot;0&quot;&gt;Clicked 0 times&lt;&#47;button&gt;
+<span class="comment">// The following changes the buttons text when we click it
+// Add a "listener" to the button to detect when someone clicks on it</span>
+document.getElementById('example').addEventListener('click', updateText, false);
+<span class="comment">// Function called when button clicked</span>
+function updateText(clickedButton){
+    <span class="comment">// Add 1 to the value of the button</span>
+    clickedButton.target.value = parseInt(evt.target.value) + 1;
+    <span class="comment">// Replace the content inside the HTML tags</span>
+    clickedButton.target.innerHTML = "Clicked " + evt.target.value + " times";
+}
+<script>
+    document.getElementById('example').addEventListener('click', updateText, false);
+    function updateText(clickedButton){
+        clickedButton.target.value = parseInt(clickedButton.target.value) + 1;
+        clickedButton.target.innerHTML = "Clicked " + clickedButton.target.value + " times";
+    }
+</script>
+</pre>
+                </code>
+            </div> 
+            <p>Looking at the above example, you can see how you can access things in the DOM. Firstly, we created a button with an ID "example". We then needed to access the DOM to find that button and we used the call document.getElementByID('example'), this informed the browser that we were wanting to find an element with the ID property with the value of example, inside the "document"/web page. When we successfully found the object we are looking for, we added what is called an "Event Listener" to it. This is essentially just something that is waiting for input by the user. In this case the "event" we are "listening" for is a mouse click. And when the button is clicked, it put's its hand up to say "Hey I was clicked!" and lets the function updateText know that it need's to do it's thing.</p>
+            <p>Once the updateText function was called, it took the button, and performed some maths on it's value property to add 1 click to it, it then replaced all text between the &lt;button&gt;&lt;&#47;button&gt; tags, with new text, reflecting the new value property.</p>
+        </div>
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container">
+                <h2>Functions</h2>
+                <p>Functions are a key part of JavaScript. They are a repeatable snippet of code that can be called over and over, whenever you need it. In the button example above you saw that we created a function called updateText, which was called every time that you clicked the button. This is just the tip of the iceberg on the usefulness of functions.</p>
+                <p>Functions exist everywhere in programming, and you will interact with functions on a daily basis. Any time you log in to a website or app, it will call a "log in" function, to perform the steps of logging a user in.</p>
+                <p>Functions exist in physical form all around you if you think about it. If you have a bottle of milk you want to make cold, you put it in the fridge and call the "Refrigerate" function. If you want to make ice, you put it in your freezer and call the "Freeze" function. When you want to start your car, you put the key in the ignition and turn it, calling 2 functions. The first being an authentication/permissions challenge in which it validates if the key is the correct key for the car, and thus is it allowed to start? And if it is allowed to start, it then starts the car.</p>
+                <p>The three everyday functions described here are examples of Control Flow. With the first two being sequential, and the starting a car being selective.</p>
             </div>
         </div>
         <div class="container pt-5 pb-5">
@@ -212,12 +300,25 @@ do {
             </div>
         
             <p>An example of this in real life is tying putting on your shoes. You put your shoes on, and then you tie them, up until the point that the end case is met, which is both shoes are tied, at which point you will stop tying your shoes.</p>
+
+            
         </div>
         <div class="container-fluid pt-5 pb-5">
             <div class="container">
+                <h2>Further Reading</h2>
             
+                <p>All of the properties outlined in this blog, have barely scratched the surface on what all of this is, and all that it is capable of. I hope that you have found this information interesting, though if this has peaked your interest, feel free to read on with one of the below sites which go a lot more in depth, with a lot more details.</p>
+                <ul class="list-unstyled">
+                    <li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Document Object Model</a></li>
+                    <li>World Wide Web Consortium: <a href="https://www.w3.org/TR/DOM-Level-2-Core/introduction.html">What is the Document Object Model?</a></li>
+                    <li>Mozilla Developers Network: <a href="https://developer.mozilla.org/en-US/docs/DOM/DOM_Reference/Introduction">Introduction - Document Object Model</a></li>
+                    <li>W3C School: <a href="https://www.w3schools.com/js/js_objects.asp">Javascript - Objects</a></li>
+                    <li>Free Code Camp: <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/">Basic JavaScript</a></li>
+                    
+                </ul>
             </div>
         </div>
+        
         
         <footer>
             <p>PilcrowMicro, Logo, Web design and Content &copy; Anthony McGrath 2020</p>
