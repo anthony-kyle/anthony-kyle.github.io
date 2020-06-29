@@ -30,9 +30,52 @@
             </div>
         </div> -->
         <div class="container pt-5 pb-5">
-            
-        </div> -->
-
+            <h1>JavaScript and the DOM</h1>
+            <p>This week we will explore the powerhouse of web development, JavaScript. What it is, how it works, and how it fits into the base web site standards we all know and love, HTML and CSS.</p>
+            <p>JavaScript is an Object Oriented Scripting language, that at it's simplest adds interactivity to a website.</p>
+            <p>If we were to think of a website as a car, the various parts could be broken down as follows:</p>
+            <img src="images/exploded-car.jpg" alt="Car in an exploded view" class="mt-2 mb-4 fig">
+            <h3>HTML</h3>
+            <p>HTML would be the chassis and structural components of the car. The bits that hold everything together and make it what we know as a car.</p>
+            <p>This is as HTML works on a website, the HTML forms the skeleton, the bones on which the site is built.</p>
+            <h3>CSS</h3>
+            <p>The CSS would be the body of the car, the shell, the paint, the interior, everything about how the car looks.</p>
+            <p>Much as on a web site how everything is styled using CSS, the color scheme, layout, is all controlled by CSS.</p>
+            <h3>JavaScript</h3>
+            <p>The JavaScript (JS) is the engine, driveshaft, pedals and gearbox. It is the bit the enables the car to be driven. It is what tells the engine to accelerate when the driver presses the accelerator. It Lets the user interact and "control" the site.</p>
+        </div>
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container">
+                <h3>How Does JavaScript "Drive" a Website</h3>
+                <p>JavaScript controls a website, by interacting with the DOM, or Document Object Model. In this, every element on a webpage from the browser window itself, to the individual element tags, are what are referred to as Objects.</p>
+                <p>Objects are essentially what you would think of as an object. A thing that you can identify, and which you "know" things about.</p>
+                <img src="images/blocks.png" alt="Childrens Building Blocks" class="png-shadow mt-2 mb-4">
+                <p>Take the above childrens building blocks toy. We know that these are building blocks just by looking at them, we know they are made of wood. We know that there are six of them.</p>
+                <p>This is much like an object in JavaScript, it is a "thing" which we know information about as it is stored inside. We could describe these childrens blocks in JavaScript as below.</p>
+                <div class="example code">
+                    <code>
+<pre>
+<span class="comment">// This format defines an object called Childrens Blocks</span>
+var childrensBlocks = { 
+    description: "Toy blocks for a child",
+    contents: block,
+    quantity: 6
+}
+<span class="comment">// This is creating a second object called block,<br> which is included in the childrensBlocks object as "contents"</span>
+var block = {
+    description: "A single block",
+    material: "Wood",
+    numSides: 6,
+    Length: 5,
+    Width: 5,
+    Height: 5
+}</pre>
+                    </code>
+                </div> 
+                <p>In the above example I demonstrated creating two objects in JavaScript, the first is the Toy "childrensBlocks", in here we have a description, of what "childrensBlocks" are, what is contained in the "childrensBlocks" toy, and how many of them are in the toy. You will notice that the contents of childrensBlocks is another object called "block". Which we have a description, material, how many sides and the dimensions of the sides which allow us to understand the shape of the block.</p>
+                <p>This is how objects work, they are organised "things" which have properties, which can be read, manipulated, or changed with JavaScript. The key is that <em>EVERYTHING</em> is an object, and has these properties. From ones that you create as above, to &lt;p&gt; tags, to the browser window. Everything is an object and can be manipulated with JavaScript.</p>
+            </div>
+        </div>
         
         <footer>
             <p>PilcrowMicro, Logo, Web design and Content &copy; Anthony McGrath 2020</p>
