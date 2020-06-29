@@ -80,10 +80,144 @@ var block = {
             <h2>Control Flow</h2>
             <p>Control flow is an integral part of programming. Control flow is the umbrella name given to controlling logic and the decision making process that your code uses.</p>
             <p>Control flow is broken down into three categories: Sequential, Selection and Repetition.</p>
-            <h3>Sequential Control Flow</h3>
-            <p></p>
+            <h3>Sequential Flow Control</h3>
+            <p>Sequential control flow is the default flow for a program. It is the sequential reading and processing each line of code from the top of the page to the bottom. It can be thought of similar to if you are driving your car from one city to another and following a GPS guidance system, the instructions it gives you, when to turn, where to go, are the instructions given to the program (you) and you follow them. Completing one before moving onto the next, from the moment you start, until the moment you reach your destination.</p>
+            <p>This too is how a sequential program works, you give it instructions, in a particular order, and it will complete each instruction before moving on to the next.</p>
+            <div class="example code">
+                <code>
+<pre>
+<span class="comment">// Example program starts here</span>
+var number = 0;
+<span class="comment">// Program defines a variable called number, and sets the value to 0</span>
+number = 10;
+<span class="comment">// Program sets 10 to the variable called number</span>
+window.alert(number);
+<span class="comment">// Program creates an alert box with the value of 10</span>
+</pre>
+                </code>
+            </div> 
+            <p>This is how much code is written, and all code is interpereted this way, unless you utilise one of the following methods to change the flow. However, even when you use one of the following methods, inside those methods you will have a sequential flow.</p>
         </div>
-
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container">
+                <h3>Selection Flow Control</h3>
+                <p>Selection control flow, is the process of choosing a direction for the flow to proceed. This is how a program can decide what to do based on the information provided it.</p>
+                <p>The way JavaScript handles this is through the use of If-then, If-then-else, and Switch statements.</p>
+                <h4>If-Then Statements</h4>
+                <p>If-then statements assess if a particular situation is true, and only if it is true, processes the subsequent code. It looks like this:</p>
+                <div class="example code">
+                    <code>
+<pre>
+<span class="comment">// Example If-Then statement</span>
+<span class="comment">// Validate if the Mans Name is Henry</span>
+if (mansName == "Henry"){
+    <span class="comment">// If the man's name is Henry, say hello</span>
+    window.alert("Hello Henry");
+}
+</pre>
+                    </code>
+                </div> 
+                <p>You use this process often in your day to day life. From looking at the weather to see if it is raining, and if it is raining taking an umbrella, to seeing if your cars petrol tank is running low, and if you're nearly out of gas, going to the petrol station to fill it up.</p>           
+                <h4>If-Then-Else Statements</h4>
+                <p>These go one step further than if-then statements, as they also provide instructions on what to do if the situation is not true.</p>
+                <div class="example code">
+                    <code>
+<pre>
+<span class="comment">// Example If-Then-Else statement</span>
+<span class="comment">// Validate if the Mans Name is Henry</span>
+if (mansName == "Henry"){
+    <span class="comment">// If the man's name is Henry, say hello</span>
+    window.alert("Hello Henry");
+} else {
+    <span class="comment">// If the man's name is not Henry, ask where he is</span>
+    window.alert("Where's Henry?");
+}
+</pre>
+                    </code>
+                </div>
+                <p>This statement is used when deciding between two or more things to do, depending on what is required. And is again a common logic case in day to day life.</p>  
+                <p>Say for example you've woken up in the morning, are making cereal, and discover that the expiry date on the milk was yesterday. You will sniff the milk, and see if it smells off. If the milk smells off, you will tip it down the sink, else it smells good to use and you will put it on your cereal.</p>
+                <h4>Switch Statements</h4>
+                <p>Switch statements are used when there are multiple possibilities based on a simple case, as it is a much cleaner, and less convoluted method than checking the same variable against options in the if-then-else-if-then-else loop that can bog down many developers.</p>
+                <p>A switch statement starts by identifying the value that will be tested, and then providing a list of options(cases) that it could be. If it matches a particular case, perform that task and then stop looking.</p>
+                <div class="example code">
+                    <code>
+<pre>
+<span class="comment">// Example Switch statement</span>
+<span class="comment">// Determine who you are greeting</span>
+switch(person) {}
+    <span class="comment">// If the person is your mum give her a hug</span>
+    case "mum":
+        hug(); <span class="comment">// Call Hug Function</span>
+        break; <span class="comment">// Case Matched, exit switch</span>
+    <span class="comment">// If the person is your dad shake his hand</span>
+    case "dad":
+        shakeHands(); <span class="comment">// Call shakeHands Function</span>
+        break; <span class="comment">// Case Matched, exit switch</span>
+    <span class="comment">// If the person is your friend give them a High-Five</span>
+    case "friend":
+        highFive(); <span class="comment">// Call HighFive Function</span>
+        break; <span class="comment">// Case Matched, exit switch</span>
+    <span class="comment">// If you don't know the person, say Hi</span>
+    default: <span class="comment">// Default is like Else. And is run if no match</span>
+        alert("Hello Stranger");
+    }
+</pre>          
+                    </code>
+                </div>
+            <p>As you can see this is a very powerful tool for checking a single variable against a list of possibilities and reacting accordingly. You make decisions just like the one in the example above when running into people, and deciding how to greet them.</p>
+            </div>
+        </div>
+        <div class="container pt-5 pb-5">
+            <h3>Repetition Flow Control</h4>
+            <p>Repetition is a key feature of flow control. Whether it is to repeat something a particular number of times, to iterate through an array to process the information stored in it, or any number of other possibilities. </p>
+            <p>There are many ways in which you can harness repetition, and they come in the form of loops. There are two main types of loops, for loops and do-while loops.</p>
+            <h4>For Loops</h4>
+            <p>For loops are used to follow a prescribed procedure. And to only perform the enclosed code, if the check is true. To perform a for loop, you must initialise a variable, determine the logic of when to run the code, and determine how to modify the key variable if successful</p>
+            <div class="example code">
+                <code>
+<pre>
+<span class="comment">// Example For Loop
+// Obtain Age
+</span>
+var age = 17; 
+<span class="comment">// Initialise variable at 0
+// Check if variable is less or equal to the entered age
+// Increment the variable by 1.</span>
+for (var i = 0; i < age; i++) {
+    <span class="comment">// Announce the current age</span>
+    window.alert(i);
+} <span class="comment">// Repeat
+</pre>          
+                </code>
+            </div>
+            <p>This simple code snippet will take an age variable, and announce all of the numbers up to the age variable. It will essentially count up to the provided age.</p>
+            <p>This is a very basic use case of a for loop, you will often use for loops to loop through the contents of an array and perform a specific task on all of the stored data.</p>
+            <p>An example of this would be if you went to the supermarket with your shopping list. As you walk down the aisles, you are checking if any of the items are on your list. If any of them match the items on your list, you put them in your cart. And once you have crossed every item off your list you leave. This is exactly how a for loop works. You provide the supermarket, and your shopping list and it goes through the supermarket one item at a time, and performs the same action on each item that matches.</p>
+            <h4>Do-While Loops</h4>
+            <p>Do-while loops are very similar to a for loop, with the exception that a do while loop will always run at least one time. The reason for this is it performs the data validation at the end of the loop rather than the beginning, which means you will always have at least one run through, before the check is performed, and then if the check is still true it will repeat, if not it will exit.</p>
+            <div class="example code">
+                <code>
+<pre>
+<span class="comment">// Example Do-While Loop
+// Obtain Age</span>
+var i = 0; 
+<span class="comment">// Start Do-While Loop</span>
+do {
+    <span class="comment">// Add 1 to i</span>
+    i++;
+} while (i &lt; 5) <span class="comment">// Repeat this if i is less than 5
+</pre>          
+                </code>
+            </div>
+        
+            <p>An example of this in real life is tying putting on your shoes. You put your shoes on, and then you tie them, up until the point that the end case is met, which is both shoes are tied, at which point you will stop tying your shoes.</p>
+        </div>
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container">
+            
+            </div>
+        </div>
         
         <footer>
             <p>PilcrowMicro, Logo, Web design and Content &copy; Anthony McGrath 2020</p>
