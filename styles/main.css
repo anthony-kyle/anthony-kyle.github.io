@@ -177,6 +177,8 @@ nav ul li.sub a {
 /************************************************
 /* Image manipulation 
 /***********************************************/
+
+img {max-width: 90%;}
 .image {
     width: 220px;
     min-width: 220px;
@@ -303,15 +305,14 @@ footer {
 /**************************************************************
 /* Reactive content
 /*************************************************************/
-/* @media screen and (max-width: 600px) {
-    #masthead {
-        height: 20vmin;
-    }
-    section {
-        width: auto;
+@media screen and (max-width: 600px) {
+    .eg-img {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
-*/
+
 /* @media screen and (max-width: 440px) {
     .image, .example {
         min-width: 305px;
