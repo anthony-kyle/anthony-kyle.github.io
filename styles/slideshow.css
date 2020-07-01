@@ -1,0 +1,31 @@
+/****************************************
+File: slideshow.css
+Purpose: style slideshow elements
+Author: Anthony McGrath - akm@anthonykyle.co.nz
+*****************************************/
+
+/* Change height and width of slideshow */
+:root{
+    --slideshow-width: 100%;
+    --slideshow-height: 800px;
+}
+
+/* No need to change below code */
+#banner {
+    width: var(--slideshow-width); 
+    height: var(--slideshow-height);
+    position: relative; 
+    display: block;  
+    overflow: hidden;
+}
+#banner .slide {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    text-align: center;
+}
+
+.slide img {
+    max-width: 100%;
+    display: cover;
+}

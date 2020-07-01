@@ -22,17 +22,158 @@
             </ul>
         </nav>
         <div class="container pt-5 pb-5">
-            <h1></h1>
-            <p></p>        
+            <h1>Dealing With Problems While Coding</h1>
+            <p>
+                As a programmer you will frequently encounter problems. It could be trying to perform something difficult which you can't wrap your head around, or it could be as simple as a single spelling mistake that causes your entire program to crash and burn.
+            </p>        
+            <p>
+                We are all prone to making mistakes, and with programming even a simple spelling mistake can be catastrophic, but it is our job as programmers to understand how to tackle problems, and broken code that obstinately refuses to work.
+            </p>
         </div>
         <div class="container-fluid pt-5 pb-5">
             <div class="container">
-                <h2></h2>
-
-                <p></p>
+                <h2>The Typo that Couldn't</h2>
+                <p>
+                    I have an example where I was blocked by a simple issue. And the cause of the issue was extremely simple, however it took me far longer to figure out than I would have liked.
+                </p>
+                <p>
+                    Let me set the stage, I was performing a coding exercise on <a href="https://repl.it/@Struthious" target="_blank">Repl.it</a>, and I needed to loop through an array to access the data. From my experience in PHP I knew of a "foreach" loop which would automagically access each item in an array until it ran out of items. Knowing this I looked to see if such a function existed in JavaScript. A quick google search showed me that it did in fact exist, and the way it worked was similar to what I knew from PHP. Armed with this information I charged full steam ahead, wrote out my loop and hit GO! only to discover it didn't work.
+                </p>
+                <p>
+                    The most puzzling thing about the fact that it didn't work was not that it got stuck in the loop, it was that it was telling me there was no such function as "foreach"! I could not understand this as I had evidence from <a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank">w3schools</a> that foreach existed.
+                </p>
+                <p>
+                    I dived into google to find the answer, and there was nothing I could find, and so I made the executive (incorrect) assumption that <a href="https://repl.it/@Struthious" target="_blank">Repl.it</a> did not have the function foreach implemented, and that there was nothing actually wrong with my code, it was the platform that was at fault.
+                </p>
+                <p>
+                    Following this decision, I came up with another way to do the task, a much longer (but supported) way. I got to the end and was happy that I had made it work. However I was looking at my code and was unhappy with it. It just lacked the elegance it would have had if I could use "foreach".
+                </p>
+                <p>
+                    Also in the back of my mind I acknowledged that this is a code development system, it would be insane for it not to have every function supported so there must be something I did wrong.
+                </p>
+                <p>
+                    So I pressed on, digging and digging and then I saw it. Like a beacon from god I was reading the documentation for the function and I saw it. The function was "for<strong>E</strong>ach". Each with a capital <strong>E</strong>.
+                </p>
+                <p>
+                    I had been so convinced that it was all lowercase, because that's how it worked in PHP, that I didn't even look at the capitalisation. But sure as sugar, once I built a "forEach" loop with a capital E, it worked.
+                </p>
+                <p>
+                    And that is how I was <em>almost</em> defeated by case sensitivity.
+                </p>
             </div>
         </div>     
-        
+        <div class="container pt-5 pb-5">
+            <h2>The Slideshow That Could</h2>
+            <p>
+                While there are simple issues that you can get hung up on, there are also other issues, which are inherantly more difficult that you can't help but feel proud of your result.
+            </p>
+            <p>
+                One such issue I encountered, was I was given the task to add a slideshow to a website, and was even provided a JavaScript source code to do it with.
+            </p>
+            <p>
+                The problem was, the JavaScript file was 2000 lines of minified code, with non descriptive variable names and no comments.
+            </p>
+            <p>
+                To give you an example of what minified code is, take a look at the minified code for jQuery - <a href="https://code.jquery.com/jquery-3.5.1.slim.min.js" target="blank">https://code.jquery.com/jquery-3.5.1.slim.min.js</a>
+            </p>
+            <p>
+                While minified code is excellent for download speeds by removing all whitespace and formatting, it does not lend itself to understanding the code, and even if you spend hours formatting the code nicely, if there are no comments, or descriptive variable names or function names, it is a horrendous task to try and figure out how it works.
+            </p>
+            <p>
+                Confronted with this, I thought to myself that there has to be a better way. Thinking this I did some research using Google. And I discovered that the site I was working on, already used the Prototype and Scriptaculous frameworks for other aspects of it's  functionality like the navigation, and I could harness the functionality within them to rebuild something just as capable as the source code I had been given with a fraction of the footprint, and a fraction of the complexity.
+            </p>
+            <p>
+                This is exactly what I did, I designed a simple structure for images in HTML, and with 50 lines of cleanly formatted JavaScript, and 30 lines of CSS, which have a combined file size of less than 2kB, I was able to create a slideshow that performed better than the one I had been given, with an incomparible level of simplicity to implement.
+            </p>
+            <p>
+                Would you like to see it in action? And have a look at the source code?
+            </p>
+            <h4><a href="slideshow.html" target="_blank">View Slideshow Here</a></h4>
+        </div>
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container">
+                <h2>Problem Solving Techniques and How I Use Them</h2>
+                <p>
+                    There are a variety of problem solving techniques that are available to a programmer. I will touch on some of them, the benefits of it, and how I feel about them.
+                </p>
+                
+                <h4>Pseudocode</h4>
+                <p>
+                    Pseudocode is writing comments in your source before you write the code. It is using simple and clear language around what you are trying to achieve, how you think you will achieve it, and the steps you will take.
+                </p>
+                <p>
+                    I love Pseudocode, it really helps to guide your thoughts and focuses you on what you are wanting to achieve. It doesn't matter if you miss a step when you begin, or if your goal changes and you have to add more in. It helps you visualise what you're aiming for.
+                </p>
+
+                <h4>Trying Something</h4>
+                <p>
+                    The old "Give it a whirl" approach. Is an excellent approach. This is really useful when trying to solve a problem that you're not sure how to do. Just try something. Anything. If you think an idea might have merit, give it a go.
+                </p>
+                <p>
+                    The worst thing that will happen is it doesn't work and you've invested a couple of minutes confirming that. However, there is the chance that it will work, or at least work in a way that helps you understand where you're going wrong, or it may be the piece of the puzzle that let's you know what you need to do next. 
+                </p>
+
+                <h4>The Rubber Ducky Method</h4>
+                <iframe width="560" height="250" src="https://www.youtube.com/embed/huOPVqztPdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="eg-img fig"></iframe>
+                <p>
+                    The rubber ducky method is the use of an inanimate object, such as a rubber ducky, to vocalise your issues, the problems your facing, and what is going on. It is explained extremely well by CheersKevin in the following video.
+                </p>
+                <p>
+                    The benefit to the rubber ducky method, is it allows you to detail your problem as if you were explaining it to a colleague. Doing this, explaining it to someone who is unfamiliar with the project, forces you to delve deeper into what the problem is, while simultaneously simplifying it so they will understand it.
+                </p>
+                <p>
+                    It is extremely common that just by vocalising it in this way, you actually explain the solution to your issue to yourself, and at least by doing it with a rubber ducky, you don't waste your colleagues time.
+                </p>
+
+                <h4>Reading Error Messages</h4>
+                <p>
+                    I cannot stress the importance of reading error messages, as I detailed above with my foreach adventure, if I had fully read and absorbed what the error message was telling me, I would have seen that foreach did not exist, which means one thing. The name for the function I wrote does not exist, and what is more likely, I decided to use a function that noone else has? Or I made a typo?
+                </p>
+                <p>
+                    I always try to read and absorb error messages, but there are always times when you really miss what it's telling you, and that is okay. That is how you learn.
+                </p>
+
+                <h4>Console.logging</h4>
+                <p>
+                    Console.log is an invaluable tool with JavaScript development. Whether you choose to output the variable you are working with, to validate the result is what you expect, or even adding checkpoints (console.log(1), console.log(2), etc...) in strategic places through your code to see where it breaks. Having some way to get the program to relay what it's doing back to you is perhaps one of the most valuable problem solving tools available to a programmer.
+                </p>
+
+                
+                <h4>Googling</h4>
+                <img src="images/tech_support_cheat_sheet.png" alt="Tech Support Cheat Sheet" class="eg-img fig">
+                <p>
+                    Googling is your best friend. When you don't know the answer, ask google the question and see what the millions of other people in the world have to say on the matter. There are many people out there, and they can help.
+                </p>
+                <p>
+                    An excellent way to utilise this is by googling in the function you are dealing with and what is happening, and then trying some of the solutions provided in forums like Stack Overflow to see if they work. I practice this problem solving technique often.
+                </p>
+               
+                <h4>Asking Your Peers For Help</h4>
+                <p>
+                    Your peers or coworkers are invaluable in the problem solving process. How many times in your life have you struggled with something, to finally figure it out and tell your friend about it feeling proud of your achievement, only to hear "I could have told you how to do that"?
+                </p>
+                <p>
+                    Your peers are often working on similar things to you, and will experience the same issues as you, and if they have already figured it out, why do you need to do it too?
+                </p>
+                <p>
+                    Asking for help can feel embarrassing at times, and can make you feel judged, but knowledge is free, and I am yet to meet anyone who has never needed to ask for help, or refused to help if they know the answer. Your peers are there for you, just ask, because let's face it I will be asking you at some point.
+                </p>
+                
+                <h4>Asking Coaches For Help</h4>
+                <p>
+                    Coaches, or supervisors, or anyone higher up the foodchain than you, didn't get there by being ignorant. They know stuff, they often know everything you know and more. And they want to see you succeed. If you have a problem, don't necessarily run to them immediately, because they're busy people, and have a lot more on their plate that just you. But if your peers don't know, and you still need help, putting up your hand to say "I don't know" is highly recommended, as well as something I do often. 
+                </p>
+
+                <h4>Reflection</h4>
+                <p>
+                    Reflecting on what you have done, writing it down, thinking about it, talking about it to a friend or even a rubber ducky, will help you understand what you have done, and even help you identify areas that you can improve on. 
+                </p>
+                <p>
+                    I struggle with reflection, as I wan't to move on to the next new thing, however with what reflection I have done, I have never regretted it.
+                </p>
+            </div>
+        </div>
+
         <footer>
             <p>PilcrowMicro, Logo, Web design and Content &copy; Anthony McGrath 2020</p>
         </footer>
