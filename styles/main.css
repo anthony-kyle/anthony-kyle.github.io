@@ -81,11 +81,11 @@ header {
 /*************************************************************/
 nav {
     /* margin: 0 auto; */
-    
+    background-color: var(--theme-bg);
     text-align: center;
-    border: solid 1px var(--headings);
+    /* border: solid 1px var(--headings);
     border-left: 0px;
-    border-right: 0px;
+    border-right: 0px; */
     /* border-top: 0px; */
 }
 nav ul {
