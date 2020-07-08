@@ -179,6 +179,11 @@ nav ul li.sub a {
     right: 1em;
 }
 
+.strike {
+    text-decoration: line-through;
+    color: rgb(114, 3, 3)
+}
+
 
 /************************************************
 /* Image manipulation 
