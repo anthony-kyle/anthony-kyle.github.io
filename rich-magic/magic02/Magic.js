@@ -28,3 +28,4 @@ Magic.prototype.getTheMagic = function () {
   var left = "left:" + this.left + "px;";
   return width + height + top + left + background;
 }
+
