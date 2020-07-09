@@ -54,8 +54,10 @@ function Magician () {
 
   // Blink engine detection
   var isBlink = (isChrome || isOpera) && !!window.CSS;
-
-  if (isChrome == true || navigator.userAgent.indexOf("Chrome") !== -1){
+  console.log("IsChrome = " +isChrome);
+  console.log(navigator.userAgent.indexOf("Chrome"));
+  console.log("isEdge = " + isEdge);
+  if ((isChrome == true || navigator.userAgent.indexOf("Chrome") !== -1) && isEdge == false && isEdgeChromium == false && isSafari == false && isOpera == false){
     document.getElementById('click').style.display = "block";
   }
   document.addEventListener('click',touchStarted);
