@@ -41,89 +41,69 @@
 			</p>
 	</div>  
 
-	<!-- Minesweeper -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3>
-				<a href="/minesweeper/">Minesweeper</a>
-			</h3>
-			<p>
-				My take on a classic. It's very sweepy.
-			</p>
-			<p>
-				Source available on <a href="https://github.com/anthony-kyle/minesweeper" target="_blank">GitHub</a>.
-			</p>
-		</div>
-	</div>
+	<script>
+		entryFormat = true;
 
-	<!-- Inflate the Unicorn -->
-	<div class="container pt-5 pb-5">
-		<h3>
-			<a href="/javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html">Inflate the Unicorn</a>
-		</h3>
-		<p>
-			These poor unicorns have balloons for horns, and they seem to need help inflating them.
-		</p>
-		<p>
-			Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/inflate-the-unicorn" target="_blank">GitHub</a>.
-		</p>
-	</div>
+		// Minesweeper 
+		game = {
+			title: "Minesweeper",
+			blurb: 'My take on a classic. It\'s very sweepy.<br><br>Source available on <a href="https://github.com/anthony-kyle/minesweeper" target="_blank">GitHub</a>.',
+			link: '/minesweeper/',
+			imgSrc: 'images/minesweeper.png',
+			imgAlt: 'Minesweeper'
+		}
+		getEntry(game);
 
-	<!-- Whack a Mole -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3>
-				<a href="/javascript-carnival/whack-a-mole/whack-a-mole.html">Whack a Mole</a>
-			</h3>
-			<p>
-				The moles are back in the garden, you've got to help eradicate them!
-			</p>
-			<p>
-				Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/whack-a-mole" target="_blank">GitHub</a>.
-			</p>
-		</div>
-	</div>  
+		// Inflate the Unicorn
+		game = {
+			title: "Inflate the Unicorn",
+			blurb: 'These poor unicorns have balloons for horns, and they seem to need help inflating them.<br><br>Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/inflate-the-unicorn" target="_blank">GitHub</a>.',
+			link: '/javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html',
+			imgSrc: 'images/unicorn.png',
+			imgAlt: 'Unicorn'
+		}
+		getEntry(game);
 
-	<!-- Dress the Clown -->
-	<div class="container pt-5 pb-5">
-		<h3>
-			<a href="/javascript-carnival/dress-the-clown/dress-the-clown.html">Dress The Clown</a>
-		</h3>
-		<p>
-			Spend some time creating the best outfit for our friend Bobo the Clown. If you like it share it with your friends.
-		</p>
-		<p>
-			Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/dress-the-clown" target="_blank">GitHub</a>.
-		</p>
-	</div>
+		// Whack a Mole
+		game = {
+			title: "Whack a Mole",
+			blurb: 'The moles are back in the garden, you\'ve got to help eradicate them!<br><br>Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/whack-a-mole" target="_blank">GitHub</a>.',
+			link: '/javascript-carnival/whack-a-mole/whack-a-mole.html',
+			imgSrc: 'images/mole.png',
+			imgAlt: 'Whack a Mole'
+		}
+		getEntry(game);
 
-	<!-- Calculator -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3>
-				<a href="/calculator/">Calculator</a>
-			</h3>
-			<p>
-				My attempt at creating a simple 90's style pocket calculator.
-			</p>
-			<p>
-				Source available on <a href="https://github.com/anthony-kyle/calculator/" target="_blank">GitHub</a>.
-			</p>
-		</div>
-	</div>
+		// Dress the Clown
+		game = {
+			title: "Dress The Clown",
+			blurb: 'Spend some time creating the best outfit for our friend Bobo the Clown. If you like it share it with your friends.<br><br>Source available on <a href="https://github.com/anthony-kyle/javascript-carnival/tree/master/dress-the-clown" target="_blank">GitHub</a>.',
+			link: '/javascript-carnival/dress-the-clown/dress-the-clown.html',
+			imgSrc: 'images/clown.png',
+			imgAlt: 'Clown'
+		}
+		getEntry(game);
 
-	<!-- DVD Bounce -->
-	<div  class="container pt-5 pb-5">
-		<h3>
-			<a href="/dvd-bounce/">DVD Screensaver</a>
-		</h3>
-		<p>
-			A clone of the classic DVD Idle screensaver, for you to enjoy getting mesmerised by and to hope that it hits the corner.
-		</p>
-		<p>
-			Source available on <a href="https://github.com/anthony-kyle/dvd-bounce/" target="_blank">GitHub</a>.
-		</p>
-	</div>
+		// Calculator
+		game = {
+			title: "Calculator",
+			blurb: 'My attempt at creating a simple 90\'s style pocket calculator.<br><br>Source available on <a href="https://github.com/anthony-kyle/calculator/" target="_blank">GitHub</a>.',
+			link: '/calculator/',
+			imgSrc: 'images/calculator.png',
+			imgAlt: 'Calculator'
+		}
+		getEntry(game);
+
+		// DVD Bounce
+		game = {
+			title: "DVD Screensaver",
+			blurb: 'A clone of the classic DVD Idle screensaver, for you to enjoy getting mesmerised by and to hope that it hits the corner.<br><br>Source available on <a href="https://github.com/anthony-kyle/dvd-bounce/" target="_blank">GitHub</a>.',
+			link: '/dvd-bounce/',
+			imgSrc: 'images/dvd.png',
+			imgAlt: 'DVD Logo'
+		}
+		getEntry(game);
+	</script>
 	
 	<!-- Include Footer -->
 	<script type="text/JavaScript" src="../includes/footer.js"></script>

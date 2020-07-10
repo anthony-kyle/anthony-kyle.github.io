@@ -35,111 +35,97 @@
 	<!-- Navigation -->
 	<script type="text/JavaScript" src="../includes/nav.js"></script>
 
-	<!-- Body Content -->
-	<div class="container pt-5 pb-5">
-		<h1>My Blog</h1>
-		<p>
-			Welcome to my starting blog, below you will find links to my various blog entries which you can peruse at your leisure.
-		</p>
-	</div><!-- .container -->	
+	<script>
+		// Sprint 5 Content
+		blogEntry = {
+			title : 'Foundations Reflections',
+			blurb : 'Reflecting and responding to the core components covered in the course thus far.',
+			link 	: 'sprint5-cultural.htm'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'Technical Blog: We\'re <span class="strike">not</span> Playing Games',
+			blurb : 'A look at the games I made for my 5th week Sprint.',
+			link 	: '../games/'
+		};
+		getEntry(blogEntry);
+		
+		// Sprint 4 Content
+		blogEntry = {
+			title : 'Neuroplasticity and the Growth Mindset',
+			blurb : 'An investigation into what is Neuroplasticity and the Growth mindset, and how it impacts learning.',
+			link 	: 'sprint4-cultural.html'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'Technical Blog: Dealing With Problems While Coding',
+			blurb : 'A discussion into times I have encountered issues while coding, and methods for solving your problems.',
+			link 	: 'sprint4-technical.html'
+		};
+		getEntry(blogEntry);
+		
+		// Sprint 3 Content
+		blogEntry = {
+			title : 'What is Emotional Intelligence',
+			blurb : 'Emotional Intelligence or EQ (Emotional Quotient) is the knowledgeof ones self and others.',
+			link 	: 'sprint3-cultural.html'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'Technical Blog: JavaScript and the DOM',
+			blurb : 'A blog on the relationship between HTML, CSS and JS.',
+			link 	: 'sprint3-technical.html'
+		};
+		getEntry(blogEntry);
+		
+		// Sprint 2 Content
+		blogEntry = {
+			title : 'Goals, Skills and Self',
+			blurb : 'A blog entry where I reflect on my goals, hopes, and aspirations, what I\'m expecting from this course, and how I will manage myself.',
+			link 	: 'sprint2-cultural.html'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'Technical Blog: CSS Position Attribute Explained',
+			blurb : 'A detailed explanation on the details of the CSS Position Attribute, with a simple explanation on what Relative, Absolute and Fixed positioning is.',
+			link 	: 'sprint2-technical.html'
+		};
+		getEntry(blogEntry);
+		
+		// Sprint 1 Content
+		blogEntry = {
+			title : 'What are my core personal values?',
+			blurb : 'This entry is an exploration into what I believe my core values are. This is the result of introspection, as well as from the responses my family and friend gave when I asked them what they thought about me. I hope reading this you start to form some semblance of understanding of how I tick.',
+			link 	: 'sprint1-cultural.html'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'Friends and Families Responses',
+			blurb : 'This week I\'m sharing the raw responses I recived from my friends and family when I asked them to tell me what they think of me and what my core values are.',
+			link 	: 'responses.html'
+		};
+		getEntry(blogEntry);
+		
+		blogEntry = {
+			title : 'The Story of Te Houtaewa',
+			blurb : 'First technical challenge of my blog.',
+			link 	: 'sprint1-technical.html'
+		};
+		getEntry(blogEntry);
 
-	<!-- Sprint 5 Content -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint5-cultural.html">Foundations Reflections</a></h3>
-			<p>
-				Reflecting and responding to the core components covered in the course thus far.
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid --> 
-
-	<div class="container pt-5 pb-5">
-		<h3><a href="../games/">Technical Blog: We're <span class="strike">not</span> Playing Games</a></h3>
-		<p>
-			A look at the games I made for my 5th week Sprint
-		</p>
-	</div><!-- .container -->
-
-	<!-- Sprint 4 Content -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint4-cultural.html">Neuroplasticity and the Growth Mindset</a></h3>
-			<p>
-				An investigation into what is Neuroplasticity and the Growth mindset, and how it impacts learning.
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid --> 
-
-	<div class="container pt-5 pb-5">
-		<h3><a href="sprint4-technical.html">Technical Blog: Dealing With Problems While Coding</a></h3>
-		<p>
-			A discussion into times I have encountered issues while coding, and methods for solving your problems. 
-		</p>
-	</div><!-- .container -->
-
-	<!-- Sprint 3 Content -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint3-cultural.html">What is Emotional Intelligence</a></h3>
-			<p>
-				Emotional Intelligence or EQ (Emotional Quotient) is the knowledgeof ones self and others.
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid -->  
-
-	<div class="container pt-5 pb-5">
-		<h3><a href="sprint3-technical.html">Technical Blog: JavaScript and the DOM</a></h3>
-		<p>
-			A blog on the relationship between HTML, CSS and JS.
-		</p>
-	</div><!-- .container -->  
-
-	<!-- Sprint 2 Content -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint2-cultural.html">Goals, Skills and Self</a></h3>
-			<p>
-				A blog entry where I reflect on my goals, hopes, and aspirations, what I'm expecting from this course, and how I will manage myself.
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid -->
-
-	<div class="container pt-5 pb-5">
-		<h3><a href="sprint2-technical.html">Technical Blog: CSS Position Attribute Explained</a></h3>
-		<p>
-			A detailed explanation on the details of the CSS Position Attribute, with a simple explanation on what Relative, Absolute and Fixed positioning is.
-		</p>
-	</div><!-- .container -->
-	
-	
-	<!-- Sprint 1 Content -->
-	<div  class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint1-cultural.html">What are my core personal values?</a></h3>
-			<p>
-				This entry is an exploration into what I believe my core values are. This is the result of introspection, as well as from the responses my family and friend gave when I asked them what they thought about me. I hope reading this you start to form some semblance of understanding of how I tick.
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid -->  
-
-	<div class="container pt-5 pb-5">
-		<h3><a href="responses.html">Friends and Families Responses</a></h3>
-		<p>
-			This week I'm sharing the raw responses I recived from my friends and family when I asked them to tell me what they think of me and what my core values are.
-		</p>
-	</div><!-- .container -->
-
-	<div class="container-fluid pt-5 pb-5">
-		<div class="container">
-			<h3><a href="sprint1-technical.html">The Story of Te Houtaewa</a></h3>
-			<p>
-				First technical challenge of my blog
-			</p>
-		</div><!-- .container -->
-	</div><!-- .container-fluid -->
-	<div class="container pt-5 pb-5">
-		<span>Photo by <a href="https://unsplash.com/@patrickian4?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Patrick Fore</a> on <a href="https://unsplash.com/s/photos/blog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-	</div>
+		// References
+		blogEntry = {
+			title : '',
+			blurb : '<span>Photo by <a href="https://unsplash.com/@patrickian4?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Patrick Fore</a> on <a href="https://unsplash.com/s/photos/blog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>',
+			link 	: ''
+		};
+		getEntry(blogEntry);
+	</script>
 
 	<!-- Include Footer -->
 	<script type="text/JavaScript" src="../includes/footer.js"></script>

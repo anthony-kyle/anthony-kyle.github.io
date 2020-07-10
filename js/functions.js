@@ -9,12 +9,16 @@ function addListeners(){
   window.onscroll = function() {scrollFunction()};
 } // addListeners
 
+var entryFormat = false;
+
 nav = [
   {
     title: "Home",
     link: "",
     selected: false
   },
+  
+  
   {
     title: "Blog",
     link: "blog/",
@@ -144,14 +148,37 @@ function buildNavContents(pageTitle, parent){
   });
 }   
 
-
-
-
-	// 	<ul>
-	// 		<li class="selected"><a href="#">Home</a></li>
-	// 		<li><a href="blog.html">Blog Entries</a></li>
-	// 		<li><a href="games.html">Games / Tools</a></li>
-	// 		<li><a href="contact.html">Contact Me</a></li>
-	// 	</ul>
-	// </nav>
+function getEntry(entry){
+  let entryTitle = '';
+  if (entryFormat === true){
+    document.write('<div class="container-fluid pt-5 pb-5">');
+  }
+  document.write('<div class="entry container' + (entryFormat === false ? ' pt-5 pb-5' : '') + '">');
+  if (entry.imgSrc &&  entry.imgSrc != ''){
+    document.write('<img class="entryImg" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">')
+  }
+    if (entry.title != '')  {
+      entryTitle = '<h3>';
+      if (entry.link != ''){
+        entryTitle += '<a href="' + entry.link + '">';
+      }
+      entryTitle += entry.title;
+      if (entry.link != ''){
+        entryTitle += '</a>';
+      }
+      entryTitle += "</h3>";
+      document.write(entryTitle);
+    }
+    
+    if (entry.blurb != ''){
+      document.write('<p>' + entry.blurb + '</p>');  
+    }
+  document.write('</div><!-- .container -->');
+  if (entryFormat === true){
+    document.write('</div><!-- .container-fluid -->');
+    entryFormat = false;
+  } else {
+    entryFormat = true;
+  }
+}
 	

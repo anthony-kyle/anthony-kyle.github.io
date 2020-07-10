@@ -70,6 +70,21 @@ a:link, a:visited {
 	clear: both;
 }
 
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.container.entry img {
+	height: 140px;
+	float: right;
+}
+
+.container-fluid .container.entry img {
+	float: left;
+	margin-left: 0px; 
+	margin-right: 1em;
+}
 /**************************************************************
 /* Hero Image
 /*************************************************************/
