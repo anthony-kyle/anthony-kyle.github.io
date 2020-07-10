@@ -1,0 +1,1 @@
+document.write('<!-- Masthead --><header id="top"><a href="/"><img id="masthead" src="images/PilcrowMicroFull.png" alt="PilcrowMicro"></a></header>');
