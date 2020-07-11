@@ -172,7 +172,7 @@ header {
 	padding: 1em;
 }
 
-.navbar-light .navbar-nav .nav-link:hover, .show  {
+.navbar-light .navbar-nav .nav-link:hover, .show, .dropdown-item:active  {
 	color: var(--headings);
 	background-color: var(--theme-bg);
 }

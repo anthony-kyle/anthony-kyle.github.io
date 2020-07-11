@@ -30,6 +30,14 @@ nav = [
     selected: false,
     children: [
       {
+        title: "Browse All",
+        link: "games/",
+        selected: false
+      },
+      {
+        title: "divider"
+      },
+      {
         title: "Calculator",
         link: "calculator/",
         selected: false
