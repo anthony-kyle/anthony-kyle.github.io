@@ -284,6 +284,14 @@ header {
 	font-size: 1.4em;
 }
 
+.dynamicGrid div {
+	padding: 1em;
+	border: solid 1px var(--theme-bg);
+}
+.dynamicGrid .alt {
+	background-color: var(--theme-bg);
+	border-width: 0px;
+}
 
 
 /************************************************
@@ -385,6 +393,17 @@ header {
 	width: auto;
 	margin-bottom: 0.5em;
 }
+
+.gridIcon {
+	display: block;
+	object-fit: cover;
+	width: 200px;
+	max-width: 100%;
+	height: auto;
+	max-height: 200px;
+	border-radius: 50%;
+	margin-bottom: 1em;
+}
 /**************************************************************
 /* Footer
 /*************************************************************/
@@ -442,12 +461,7 @@ footer {
 /**************************************************************
 /* Reactive content
 /*************************************************************/
-@media screen and (max-width: 1024px) {
-	.blog h3 {
-			font-size: 1.5em;
-	}
-}
-
+d
 @media screen and (max-width: 800px) {
 	.blog h3 {
 			font-size: 1.2em;
@@ -488,6 +502,9 @@ footer {
 	.thumb-text h3 {
 		color: var(--headings);
 	}
+	.gridIcon {
+		margin-bottom: 1em;
+	}
 }
 
 
@@ -501,11 +518,61 @@ footer {
 	}
 }
 @media (max-width: 992px){
+	h1 {
+		font-size: 1.6rem;
+	}
+	h2 {
+		font-size: 1.4rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
+	h4 {
+		font-size: 1rem;
+	}
 	.dropdown-menu {
 		text-align: center;
 		background-color: var(--overlay-semi-white);
 	}
 	.show {
 		background: none;
+	}
+}
+
+@media (max-width: 766px){
+	h1 {
+		font-size: 1.4rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 575px){
+	.blog.col-sm.ml-2 {
+		margin-left: 0px !important;
+	}
+	h1 {
+		font-size: 1.8rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.3rem;
+	}
+	h4 {
+		font-size: 1.1rem;
+	}
+	.gridIcon {
+		max-width: 100%;
+		height: auto;
+		
 	}
 }

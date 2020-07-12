@@ -10,6 +10,8 @@ function addListeners(){
 } // addListeners
 
 var entryFormat = false;
+var gridEntry = 0;
+var gridInx = 0;
 
 nav = [
   {
@@ -189,4 +191,47 @@ function getEntry(entry){
     entryFormat = true;
   }
 }
-	
+
+function getGrid(entry){
+  let entryTitle = '';
+  if (gridEntry == 0){
+    document.write('<div class="row dynamicGrid">');
+  }
+  document.write('<div class="col-sm-4' + (gridInx % 2 != 0 ? ' alt' : '') + '">');
+  if (entry.imgSrc &&  entry.imgSrc != ''){
+    if (entry.link && entry.link != ''){
+      document.write('<a href="' + entry.link + '">');
+    }
+      document.write('<img class="thumb gridIcon" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">')
+    if (entry.link && entry.link != ''){
+      document.write('</a>');
+    }
+  }
+    if (entry.title && entry.title != '')  {
+      entryTitle = '<h4>';
+      if (entry.link && entry.link != ''){
+        entryTitle += '<a href="' + entry.link + '">';
+      }
+      entryTitle += entry.title;
+      if (entry.link && entry.link != ''){
+        entryTitle += '</a>';
+      }
+      entryTitle += "</h4>";
+      document.write(entryTitle);
+    }
+    
+    
+    if (entry.blurb && entry.blurb != ''){
+      document.write('<p>' + entry.blurb + '</p>');  
+    }
+    
+    
+  document.write('</div><!-- .col.sm -->');
+  gridInx++;
+  if (gridEntry < 2){
+    gridEntry++;
+  } else {
+    document.write('</div>');
+    gridEntry = 0;
+  }
+}
