@@ -2,6 +2,10 @@
 // Functions.js                           */
 // Author: Anthony McGrath                */
 //*************************************** */
+
+//*************************************** */
+// Add Event Listeners                    */
+//*************************************** */
 document.addEventListener('DOMContentLoaded', addListeners);
 
 function addListeners(){
@@ -9,18 +13,20 @@ function addListeners(){
   window.onscroll = function() {scrollFunction()};
 } // addListeners
 
+//*************************************** */
+// Define Global Variables                */
+//*************************************** */
 var entryFormat = false;
 var gridEntry = 0;
 var gridInx = 0;
 
+// Define site Navigation Array
 nav = [
   {
     title: "Home",
     link: "",
     selected: false
   },
-  
-  
   {
     title: "Blog",
     link: "blog/",
@@ -81,46 +87,173 @@ nav = [
   }
 ]; // nav[{}]
 
+
+//*************************************** */
+// Scroll to Top Functionality            */
+//*************************************** */
 function scrollFunction() {
+  // Toggle display of to top link based on scroll position
   let toTop = document.getElementById('scroll');
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     toTop.style.display = "block";
   } else {
     toTop.style.display = "none";
   }
-}
+} // scrollFunction
 
 function toTop(){
+  // Scroll to top of page
   window.scroll({
     top: 0, 
     left: 0, 
     behavior: 'smooth'
   });
-}
+} // toTop()
+
+//*************************************** */
+// Utility Functions                      */
+//*************************************** */
+
 
 function makeUrl(path, link, text, params){
+  // Return an Anchor Tag from variables
   let pString = "";
   for (let key in params){
-    
     pString += " " + key + '="' + params[key] + '"';
   }
   document.write('<a href="' + path + link + '"' + pString + '>' + text + '</a>');
 } // makelink(path, link, text, params{})
 
-function getPageName(title, parent){
+function getEntry(entry){
+  // Create a item to be displayed in a list of alternating blocks
+  // var content is to store full HTML for item, once content is built output to DOM
+
+  let content = ''; // var to store entry HTML as defined
+
+  if (entryFormat === true){ 
+    content += '<div class="container-fluid pt-5 pb-5">';
+  } // current object is full width
+
+  // Base container plus padding if not full width
+  content += '<div class="entry container' + (entryFormat === false ? ' pt-5 pb-5' : '') + '">'; 
+
+  if (entry.imgSrc &&  entry.imgSrc != ''){
+    content += '<img class="entryImg" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">';
+  } // if image is defined, add to entry
+
+  if (entry.title && entry.title != '')  {
+    content += '<h3>';
+    if (entry.link && entry.link != ''){
+      content += '<a href="' + entry.link + '">';
+    } // if link defined open anchor
+
+    content += entry.title; // add header to content
+
+    if (entry.link && entry.link != ''){
+      content += '</a>';
+    } // if link defined close anchor
+    content += "</h3>";
+  } // if title defined add to entry
+  
+  if (entry.blurb && entry.blurb != ''){
+    content += '<p>' + entry.blurb + '</p>';  
+  } // if blurb defined add to content
+
+  content += '</div><!-- .container -->'; // close base container
+
+  if (entryFormat === true){
+    content += '</div><!-- .container-fluid -->'; // close full width container
+    entryFormat = false; // toggle next container to not be full width
+  } else {
+    entryFormat = true; // toggle next container to be full width
+  }
+
+  // output content to DOM
+  document.write(content);
+} // getEntry(entry)
+
+
+// Create an item to be displayed in a dynamic grid of objects
+function getGrid(entry){
+  let entryTitle = '';
+  let entryImg = '';
+  if (gridEntry == 0){
+    // Create New Row
+    document.write('<div class="row dynamicGrid">');
+  }
+
+  // Create Column Entry (every second column assigned alt class)
+  document.write('<div class="col-sm-4' + (gridInx % 2 != 0 ? ' alt' : '') + '">');
+
+    // If there is an image defined add to DOM
+    if (entry.imgSrc &&  entry.imgSrc != ''){
+
+      
+      if (entry.link && entry.link != ''){
+        entryImg += '<a href="' + entry.link + '">';
+      } // If link defined open anchor tag
+
+      // Define image
+      entryImg += '<img class="thumb gridIcon" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">';
+
+      if (entry.link && entry.link != ''){
+        entryImg += '</a>';
+      } // If link defined close anchor tag
+
+      document.write(entryImg); // Output to DOM
+    } // img definition
+
+    // If entry title defined add header
+    if (entry.title && entry.title != '')  {
+      entryTitle = '<h4>'; // Open Header
+
+      if (entry.link && entry.link != ''){
+        entryTitle += '<a href="' + entry.link + '">';
+      } // if link defined open anchor tag
+
+      entryTitle += entry.title; // Define header content
+
+      if (entry.link && entry.link != ''){
+        entryTitle += '</a>'; 
+      } // if link defined close anchor tag
+
+      entryTitle += "</h4>"; // close header
+      document.write(entryTitle); // Output to DOM
+    } // title / header definition
+    
+    if (entry.blurb && entry.blurb != ''){
+      document.write('<p>' + entry.blurb + '</p>');  
+    } // Add blurb to DOM
+    
+  document.write('</div><!-- .col.sm -->'); // Close Column Object
+  gridInx++; // increment grid index
+  if (gridEntry < 2){ // max columns in row = 3
+    gridEntry++;
+  } else { // close row and reset
+    document.write('</div>');
+    gridEntry = 0;
+  }
+} // getGrid(entry)
+
+
+//*************************************** */
+// Navigation Functions                   */
+//*************************************** */
+
+// Check if NAV entry is the current page
+function isCurrentPage(title, parent){
   if (title == parent){
     return title + ' <span class="sr-only">(current)</span>';
   } else {
     return title;
   } 
-} // getPageName(title, parent)
+} // isCurrentPage(title, parent)
 
-function isCurrentPage(title, parent, pageTitle){
-
-}
-
+// Generate Navigation
 function buildNavContents(pageTitle, parent){
   let navClass;
+
+  // Create Top Level Nav
   nav.forEach(page => {
     navClass="nav-item";
     if (page.title == pageTitle || page.title == parent){
@@ -128,6 +261,7 @@ function buildNavContents(pageTitle, parent){
     };
     
     if(page.children){
+      // If page object has children property, is dropdown menu
       navClass += " dropdown";
       document.write('<li class="' + navClass + '">');
         let params = {
@@ -152,86 +286,9 @@ function buildNavContents(pageTitle, parent){
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-			makeUrl(path, page.link, getPageName(page.title, parent), {class: 'nav-link'});
+			makeUrl(path, page.link, isCurrentPage(page.title, parent), {class: 'nav-link'});
 			document.write('</li>');
     }
-  });
-}   
+  }); // End nav.forEach(page)
 
-function getEntry(entry){
-  let entryTitle = '';
-  if (entryFormat === true){
-    document.write('<div class="container-fluid pt-5 pb-5">');
-  }
-  document.write('<div class="entry container' + (entryFormat === false ? ' pt-5 pb-5' : '') + '">');
-  if (entry.imgSrc &&  entry.imgSrc != ''){
-    document.write('<img class="entryImg" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">')
-  }
-    if (entry.title != '')  {
-      entryTitle = '<h3>';
-      if (entry.link != ''){
-        entryTitle += '<a href="' + entry.link + '">';
-      }
-      entryTitle += entry.title;
-      if (entry.link != ''){
-        entryTitle += '</a>';
-      }
-      entryTitle += "</h3>";
-      document.write(entryTitle);
-    }
-    
-    if (entry.blurb != ''){
-      document.write('<p>' + entry.blurb + '</p>');  
-    }
-  document.write('</div><!-- .container -->');
-  if (entryFormat === true){
-    document.write('</div><!-- .container-fluid -->');
-    entryFormat = false;
-  } else {
-    entryFormat = true;
-  }
-}
-
-function getGrid(entry){
-  let entryTitle = '';
-  if (gridEntry == 0){
-    document.write('<div class="row dynamicGrid">');
-  }
-  document.write('<div class="col-sm-4' + (gridInx % 2 != 0 ? ' alt' : '') + '">');
-  if (entry.imgSrc &&  entry.imgSrc != ''){
-    if (entry.link && entry.link != ''){
-      document.write('<a href="' + entry.link + '">');
-    }
-      document.write('<img class="thumb gridIcon" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">')
-    if (entry.link && entry.link != ''){
-      document.write('</a>');
-    }
-  }
-    if (entry.title && entry.title != '')  {
-      entryTitle = '<h4>';
-      if (entry.link && entry.link != ''){
-        entryTitle += '<a href="' + entry.link + '">';
-      }
-      entryTitle += entry.title;
-      if (entry.link && entry.link != ''){
-        entryTitle += '</a>';
-      }
-      entryTitle += "</h4>";
-      document.write(entryTitle);
-    }
-    
-    
-    if (entry.blurb && entry.blurb != ''){
-      document.write('<p>' + entry.blurb + '</p>');  
-    }
-    
-    
-  document.write('</div><!-- .col.sm -->');
-  gridInx++;
-  if (gridEntry < 2){
-    gridEntry++;
-  } else {
-    document.write('</div>');
-    gridEntry = 0;
-  }
-}
+} // buildNavContents(pageTitle, parent)
