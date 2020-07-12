@@ -113,8 +113,6 @@ function toTop(){
 //*************************************** */
 // Utility Functions                      */
 //*************************************** */
-
-
 function makeUrl(path, link, text, params){
   // Return an Anchor Tag from variables
   let pString = "";
@@ -172,9 +170,8 @@ function getEntry(entry){
   document.write(content);
 } // getEntry(entry)
 
-
-// Create an item to be displayed in a dynamic grid of objects
 function getGrid(entry){
+  // Create an item to be displayed in a dynamic grid of objects
   let entryTitle = '';
   let entryImg = '';
   if (gridEntry == 0){
@@ -239,9 +236,8 @@ function getGrid(entry){
 //*************************************** */
 // Navigation Functions                   */
 //*************************************** */
-
-// Check if NAV entry is the current page
 function isCurrentPage(title, parent){
+  // Check if NAV entry is the current page
   if (title == parent){
     return title + ' <span class="sr-only">(current)</span>';
   } else {
@@ -249,8 +245,8 @@ function isCurrentPage(title, parent){
   } 
 } // isCurrentPage(title, parent)
 
-// Generate Navigation
 function buildNavContents(pageTitle, parent){
+  // Generate Navigation
   let navClass;
 
   // Create Top Level Nav
