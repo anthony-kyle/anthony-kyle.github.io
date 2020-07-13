@@ -44,26 +44,8 @@ h1, h2, h3, h4 {
 	font-family: LemonMilk, 'Montserrat', 'Helvetica', 'Arial', sans-serif;
 }
 
-.txt-left {
-	text-align: left;
-}
-
-.txt-right {
-	text-align: right;
-}
-
 a:link, a:visited {
 	color: var(--headings);
-}
-
-.fl-r {
-	float: right;
-	margin-left: 1em;
-}
-
-.fl-l {
-	float: left;
-	margin-right: 1em;
 }
 
 .clear {
@@ -89,8 +71,26 @@ a:link, a:visited {
 /* Hero Image
 /*************************************************************/
 
+/* Image Loading */
+#heroLogo.animate {
+	-webkit-animation:spin 3s linear infinite;
+	-moz-animation:spin 3s linear infinite;
+	animation:spin 3s linear infinite;
+}
+@-moz-keyframes spin { 50%, 100% { -moz-transform: rotateY(360deg); } }
+@-webkit-keyframes spin { 50%, 100% { -webkit-transform: rotateY(360deg); } }
+@keyframes spin { 50%, 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
+
 /* The hero image */
+#hero-container {
+	background-color: rgb(7, 0, 10);
+}
+
+.preloader {
+	display: none;
+}
 #hero-image {
+	opacity: 0;
 	/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero.jpg");
 
@@ -112,7 +112,7 @@ a:link, a:visited {
 	transition: 0.5s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 
-#hero-image.Blog {
+.Blog #hero-image {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/typewriter.jpg");
 	background-position: right;
 }
@@ -165,8 +165,8 @@ header {
 	font-family: LemonMilk, sans-serif;
 	font-weight: 700;
 	padding: 0px;
-	
 }
+
 .navbar-light .navbar-nav .nav-link {
 	color: var(--headings);
 	padding: 1em;
@@ -186,16 +186,20 @@ header {
 .dropdown-divider {
 	border-color: var(--theme-bg);
 }
+
 .navbar-light .navbar-nav .nav-link:active {
 	color: var(--headings);
 }
+
 .active {
 	color: var(--headings);
 	background-color: var(--theme-bg);
 }
+
 .bg-light {
 	background-color: var(--theme-bg) !important;
 }
+
 .navbar-toggler {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
@@ -221,10 +225,6 @@ header {
 	font-size: smaller;
 }
 
-.red-text {
-	color: red;
-}
-
 .example {
 	min-width: 350px;
 	margin: 0 auto 1em auto;
@@ -247,7 +247,6 @@ header {
 	position: relative;
 	top: 30px; 
 	left: 30px;
-
 }
 
 .absolute {
@@ -284,6 +283,14 @@ header {
 	font-size: 1.4em;
 }
 
+.dynamicGrid div {
+	padding: 1em;
+	border: solid 1px var(--theme-bg);
+}
+.dynamicGrid .alt {
+	background-color: var(--theme-bg);
+	border-width: 0px;
+}
 
 
 /************************************************
@@ -385,9 +392,22 @@ header {
 	width: auto;
 	margin-bottom: 0.5em;
 }
+
+.gridIcon {
+	display: block;
+	object-fit: cover;
+	width: 200px;
+	max-width: 100%;
+	height: auto;
+	max-height: 200px;
+	border-radius: 50%;
+	margin-bottom: 1em;
+}
+
 /**************************************************************
 /* Footer
 /*************************************************************/
+
 footer {
 	font-size: 0.8em;
 	width: auto;
@@ -398,7 +418,6 @@ footer {
 }
 
 #scroll {
-
 	display: none; /* Hidden by default */
   text-align: center;
 	position: fixed;
@@ -431,8 +450,8 @@ footer {
 #scroll:hover {
 	width: 85px;
 	height: 50px;
-	
 }
+
 #scroll:hover .tooltip {
 	visibility: visible;
 	opacity: 1;
@@ -442,9 +461,25 @@ footer {
 /**************************************************************
 /* Reactive content
 /*************************************************************/
-@media screen and (max-width: 1024px) {
-	.blog h3 {
-			font-size: 1.5em;
+@media (max-width: 992px){
+	h1 {
+		font-size: 1.6rem;
+	}
+	h2 {
+		font-size: 1.4rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
+	h4 {
+		font-size: 1rem;
+	}
+	.dropdown-menu {
+		text-align: center;
+		background-color: var(--overlay-semi-white);
+	}
+	.show {
+		background: none;
 	}
 }
 
@@ -459,6 +494,31 @@ footer {
 	}
 }
 
+@media (max-width: 766px){
+	h1 {
+		font-size: 1.4rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	nav ul li {
+		display: inline-block;
+	}
+
+	nav ul li a {
+		width: auto;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	#hero-text, .Blog #hero-text {
 		width: 90%;
@@ -466,7 +526,6 @@ footer {
 	}
 	.eg-img {
 		float: none;
-		
 		max-width: 90%;
 		margin-left: auto;
 		margin-right: auto;
@@ -488,24 +547,34 @@ footer {
 	.thumb-text h3 {
 		color: var(--headings);
 	}
+	.gridIcon {
+		margin-bottom: 1em;
+	}
+}
+
+@media (max-width: 575px){
+	.blog.col-sm.ml-2 {
+		margin-left: 0px !important;
+	}
+	h1 {
+		font-size: 1.8rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.3rem;
+	}
+	h4 {
+		font-size: 1.1rem;
+	}
+	.gridIcon {
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 
-@media screen and (min-width: 600px) {
-	nav ul li {
-		display: inline-block;
-	}
 
-	nav ul li a {
-		width: auto;
-	}
-}
-@media (max-width: 992px){
-	.dropdown-menu {
-		text-align: center;
-		background-color: var(--overlay-semi-white);
-	}
-	.show {
-		background: none;
-	}
-}
+
+

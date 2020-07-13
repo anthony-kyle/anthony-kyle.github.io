@@ -12,10 +12,11 @@
 
 	<script>
 		// Define Page Properties
-		title = "Home";
-		parent = title;
-		description = "A blog created for the purpose of exploring self and tech and how they interact."
-		path = "./";
+		var page = {
+			title: "Home", // page title
+			description: "A blog created for the purpose of exploring self and tech and how they interact.", // page meta description
+			path: "./" // set path to how to find root directory
+		};
 	</script>
 
 	<!-- Include Common Head Features -->
@@ -41,9 +42,7 @@
 
 	<div class="container-fluid">
 		<div class="container pt-3 pb-3">
-
 			<div class="row">
-
 				<div class="blog col-sm mb-2 ml-2">
 					<h3>
 						<a href="./blog/sprint5-cultural.html">Foundations Reflections</a>
