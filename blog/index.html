@@ -12,10 +12,12 @@
 
 	<script>
 		// Define Page Properties
-		title = "Blog";
-		parent = title;
-		description = "A list of all of my blog entries."
-		path = "../";
+		var page = {
+			title: "Blog",				// page title
+			description: "A list of all of my blog entries.", // page meta description
+			parent: "Blog", 	// set to title if top level nav, else set to parent name (string)
+			path: "../"				// set path to how to find root directory
+		};
 	</script>
 
 	<!-- Include Common Head Features -->

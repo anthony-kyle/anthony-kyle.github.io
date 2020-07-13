@@ -268,21 +268,21 @@ function buildNavContents(pageTitle, parent){
           "aria-haspopup":"true",
           "aria-expanded":"false"
         };
-        makeUrl(path, page.link, page.title, params);
+        makeUrl(page.path, page.link, page.title, params);
         document.write('<div class="dropdown-menu" aria-labelledby="navbarDropdown">');
           navClass = 'dropdown-item';			
           page.children.forEach(child => {
             if (child.title == "divider"){
               document.write('<div class="dropdown-divider"></div>');
             } else {
-              makeUrl(path, child.link, child.title, {class: navClass});
+              makeUrl(page.path, child.link, child.title, {class: navClass});
             }
           });
         document.write('</div>');
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-			makeUrl(path, page.link, isCurrentPage(page.title, parent), {class: 'nav-link'});
+			makeUrl(page.path, page.link, isCurrentPage(page.title, parent), {class: 'nav-link'});
 			document.write('</li>');
     }
   }); // End nav.forEach(page)
