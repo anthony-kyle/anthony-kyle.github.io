@@ -282,7 +282,6 @@ function buildNavContents(pageTitle, parent){
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-      console.log(navPage.link);
 			makeUrl(page.path, navPage.link, isCurrentPage(navPage.title, page.parent), {class: 'nav-link'});
 			document.write('</li>');
     }
