@@ -12,10 +12,12 @@
 
 	<script>
 		// Define Page Properties
-		title = "Stories and Legends";
-		parent = "Blog";
-		description = "The Tale of Te Houtaewa."
-		path = "../";
+		var page = {
+			title: "Stories and Legends",				// page title
+			description: "The Tale of Te Houtaewa.", // page meta description
+			parent: "Blog", 	// set to title if top level nav, else set to parent name (string)
+			path: "../"				// set path to how to find root directory
+		};
 	</script>
 
 	<!-- Include Common Head Features -->
