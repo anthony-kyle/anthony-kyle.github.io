@@ -109,7 +109,7 @@ a:link, a:visited {
 
 	top: 0;
 	width: 100%; /* Full width */
-	transition: 0.5s; /* Add a transition effect (when scrolling - and font size is decreased) */
+	transition: 1s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 
 .Blog #hero-image {
