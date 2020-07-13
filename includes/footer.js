@@ -6,7 +6,7 @@ document.write('<footer>');
 
 	
 	document.write('<div id="scroll" class="animate__animated animate__slideInUp">');
-		document.write('<img src="' + path + 'images/caret.png" alt="To Top">');
+		document.write('<img src="' + page.path + 'images/caret.png" alt="To Top">');
 		document.write('<span class="tooltip">Jump to Top</span>');
 	document.write('</div><!-- #scroll -->');
 
