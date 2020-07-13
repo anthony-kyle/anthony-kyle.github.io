@@ -11,11 +11,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<script>
-		// Define Page Properties
-		title = "Responses";
-		parent = "Blog";
-		description = "A blog entry containing my friends and families responses on who I am."
-		path = "../";
+        // Define Page Properties
+        var page = {
+			title: "Responses",	    // page title
+			description: "A blog entry containing my friends and families responses on who I am.", // page meta description
+            parent: "Blog", 	    // set to title if top level nav, else set to parent name (string)
+			path: "../"				// set path to how to find root directory
+		};
 	</script>
 
 	<!-- Include Common Head Features -->

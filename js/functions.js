@@ -250,13 +250,13 @@ function buildNavContents(pageTitle, parent){
   let navClass;
 
   // Create Top Level Nav
-  nav.forEach(page => {
+  nav.forEach(navPage => {
     navClass="nav-item";
-    if (page.title == pageTitle || page.title == parent){
+    if (navPage.title == pageTitle || navPage.title == parent){
       navClass += " active";
     };
     
-    if(page.children){
+    if(navPage.children){
       // If page object has children property, is dropdown menu
       navClass += " dropdown";
       document.write('<li class="' + navClass + '">');
@@ -268,10 +268,10 @@ function buildNavContents(pageTitle, parent){
           "aria-haspopup":"true",
           "aria-expanded":"false"
         };
-        makeUrl(page.path, page.link, page.title, params);
+        makeUrl(page.path, navPage.link, navPage.title, params);
         document.write('<div class="dropdown-menu" aria-labelledby="navbarDropdown">');
           navClass = 'dropdown-item';			
-          page.children.forEach(child => {
+          navPage.children.forEach(child => {
             if (child.title == "divider"){
               document.write('<div class="dropdown-divider"></div>');
             } else {
@@ -282,7 +282,8 @@ function buildNavContents(pageTitle, parent){
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-			makeUrl(page.path, page.link, isCurrentPage(page.title, parent), {class: 'nav-link'});
+      console.log(navPage.link);
+			makeUrl(page.path, navPage.link, isCurrentPage(navPage.title, page.parent), {class: 'nav-link'});
 			document.write('</li>');
     }
   }); // End nav.forEach(page)
