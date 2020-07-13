@@ -71,8 +71,26 @@ a:link, a:visited {
 /* Hero Image
 /*************************************************************/
 
+/* Image Loading */
+#heroLogo.animate {
+	-webkit-animation:spin 3s linear infinite;
+	-moz-animation:spin 3s linear infinite;
+	animation:spin 3s linear infinite;
+}
+@-moz-keyframes spin { 50%, 100% { -moz-transform: rotateY(360deg); } }
+@-webkit-keyframes spin { 50%, 100% { -webkit-transform: rotateY(360deg); } }
+@keyframes spin { 50%, 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
+
 /* The hero image */
+#hero-container {
+	background-color: rgb(7, 0, 10);
+}
+
+.preloader {
+	display: none;
+}
 #hero-image {
+	opacity: 0;
 	/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero.jpg");
 
@@ -94,7 +112,7 @@ a:link, a:visited {
 	transition: 0.5s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 
-#hero-image.Blog {
+.Blog #hero-image {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/typewriter.jpg");
 	background-position: right;
 }

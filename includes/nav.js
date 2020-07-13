@@ -6,7 +6,7 @@ document.write('<nav class="navbar navbar-expand-lg navbar-light bg-light">');
 
 	document.write('<div class="collapse navbar-collapse" id="navbarSupportedContent">');
 		document.write('<ul class="navbar-nav ml-auto mr-auto">');
-			buildNavContents(page.title, page.parent);
+			buildNavContents(page.title);
 		document.write('</ul>');
 	document.write('</div>');
 document.write('</nav>');

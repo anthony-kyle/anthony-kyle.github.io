@@ -7,8 +7,11 @@
 // Add Event Listeners                    */
 //*************************************** */
 document.addEventListener('DOMContentLoaded', addListeners);
-
 function addListeners(){
+  // if (hero && document.getElementById("heroPreload").complete == true){
+  //   alert('imageLoaded');
+  //   showHero();
+  // };
   document.getElementById('scroll').addEventListener('click', toTop);
   window.onscroll = function() {scrollFunction()};
 } // addListeners
@@ -21,26 +24,42 @@ var gridEntry = 0;
 var gridInx = 0;
 
 // Define site Navigation Array
+// Object items:
+//  - title:    Page title
+//  - link:     Link to page from root
+//  - subpages: Pages under page (not included in nav)  
+//  - children: Pages under page (included in nav)
+//
+// note if title == "divider" - will insert divider into nav.
 nav = [
   {
     title: "Home",
     link: "",
-    selected: false
+    subpages: []
   },
   {
     title: "Blog",
     link: "blog/",
-    selected: false
+    subpages: [
+      "Foundation Reflections",
+      "Neuroplasticity and Growth",
+      "Problems While Coding",
+      "Emotional Intelligence",
+      "JavaScript and the DOM",
+      "Goals, Skills and Self",
+      "CSS Position Attribute Explained",
+      "My Values",
+      "Responses",
+      "Stories and Legends"
+    ]
   },
   {
     title: "Tools / Games",
     link: "games/",
-    selected: false,
     children: [
       {
         title: "Browse All",
         link: "games/",
-        selected: false
       },
       {
         title: "divider"
@@ -48,12 +67,10 @@ nav = [
       {
         title: "Calculator",
         link: "calculator/",
-        selected: false
       },
       {
         title: "DVD Screensaver",
         link: "dvd-bounce/",
-        selected: false
       },
       {
         title: "divider"
@@ -61,33 +78,37 @@ nav = [
       {
         title: "Minesweeper",
         link: "minesweeper/",
-        selected: false
       },
       {
         title: "Whack-a-Mole",
         link: "javascript-carnival/whack-a-mole/whack-a-mole.html",
-        selected: false
       },
       {
         title: "Dress the Clown",
         link: "javascript-carnival/dress-the-clown/dress-the-clown.html",
-        selected: false
       },
       {
         title: "Inflate the Unicorn",
         link: "javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html",
-        selected: false
       },
-    ]
+    ], 
+    subpages: []
   },
   {
     title: "Contact",
     link: "contact.html",
-    selected: false
+    subpages: []
   }
 ]; // nav[{}]
 
+//*************************************** */
+// Hero Image Functionality               */
+//*************************************** */
 
+function loadHero(){
+  document.getElementById('heroLogo').classList.remove('animate');
+  document.getElementById('hero-image').style.opacity = '1';
+}
 //*************************************** */
 // Scroll to Top Functionality            */
 //*************************************** */
@@ -245,9 +266,32 @@ function isCurrentPage(title, parent){
   } 
 } // isCurrentPage(title, parent)
 
-function buildNavContents(pageTitle, parent){
+function findParent(pageTitle){
+  let found = false;
+  for (var i = 0; i < nav.length; i++){
+    if (nav[i].title == pageTitle || nav[i].subpages.indexOf(pageTitle) > -1){ 
+      found = true;
+      break; 
+    } else {
+      if (nav[i].children){
+        for (let j = 0; j < nav[i].children.length; j++){
+          if (nav[i].children[j].title == pageTitle){
+            found = true;
+            break;
+          } // if found as child
+        } // for j
+      } // if has children
+    } // if found at top level
+    if (found === true){ break; }
+  } // for i
+  return nav[i].title;
+}
+
+
+function buildNavContents(pageTitle){
   // Generate Navigation
   let navClass;
+  let parent = findParent(pageTitle);
 
   // Create Top Level Nav
   nav.forEach(navPage => {
@@ -282,7 +326,7 @@ function buildNavContents(pageTitle, parent){
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-			makeUrl(page.path, navPage.link, isCurrentPage(navPage.title, page.parent), {class: 'nav-link'});
+			makeUrl(page.path, navPage.link, isCurrentPage(navPage.title, parent), {class: 'nav-link'});
 			document.write('</li>');
     }
   }); // End nav.forEach(page)
