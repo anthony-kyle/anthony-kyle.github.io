@@ -19,6 +19,10 @@ function addListeners(){
 //*************************************** */
 // Define Global Variables                */
 //*************************************** */
+var locale = '/'; 
+if (window.location.host == 'localhost'){
+  locale = '/site/';
+}
 var entryFormat = false;
 var gridEntry = 0;
 var gridInx = 0;
@@ -34,12 +38,12 @@ var gridInx = 0;
 nav = [
   {
     title: "Home",
-    link: "",
+    link: locale + "",
     subpages: []
   },
   {
     title: "Blog",
-    link: "blog/",
+    link: locale + "blog/",
     subpages: [
       "Foundation Reflections",
       "Neuroplasticity and Growth",
@@ -55,48 +59,48 @@ nav = [
   },
   {
     title: "Tools / Games",
-    link: "games/",
+    link: locale + "games/",
     children: [
       {
         title: "Browse All",
-        link: "games/",
+        link: locale + "games/",
       },
       {
         title: "divider"
       },
       {
         title: "Calculator",
-        link: "calculator/",
+        link: "/calculator/",
       },
       {
         title: "DVD Screensaver",
-        link: "dvd-bounce/",
+        link: "/dvd-bounce/",
       },
       {
         title: "divider"
       },
       {
         title: "Minesweeper",
-        link: "minesweeper/",
+        link: "/minesweeper/",
       },
       {
         title: "Whack-a-Mole",
-        link: "javascript-carnival/whack-a-mole/whack-a-mole.html",
+        link: "/javascript-carnival/whack-a-mole/whack-a-mole.html",
       },
       {
         title: "Dress the Clown",
-        link: "javascript-carnival/dress-the-clown/dress-the-clown.html",
+        link: "/javascript-carnival/dress-the-clown/dress-the-clown.html",
       },
       {
         title: "Inflate the Unicorn",
-        link: "javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html",
+        link: "/javascript-carnival/inflate-the-unicorn/inflate-the-unicorn.html",
       },
     ], 
     subpages: []
   },
   {
     title: "Contact",
-    link: "contact.html",
+    link: locale + "contact.html",
     subpages: []
   }
 ]; // nav[{}]
@@ -134,14 +138,14 @@ function toTop(){
 //*************************************** */
 // Utility Functions                      */
 //*************************************** */
-function makeUrl(path, link, text, params){
+function makeUrl(link, text, params){
   // Return an Anchor Tag from variables
   let pString = "";
   for (let key in params){
     pString += " " + key + '="' + params[key] + '"';
   }
-  document.write('<a href="' + path + link + '"' + pString + '>' + text + '</a>');
-} // makelink(path, link, text, params{})
+  document.write('<a href="' + link + '"' + pString + '>' + text + '</a>');
+} // makelink(link, text, params{})
 
 function getEntry(entry){
   // Create a item to be displayed in a list of alternating blocks
@@ -312,21 +316,21 @@ function buildNavContents(pageTitle){
           "aria-haspopup":"true",
           "aria-expanded":"false"
         };
-        makeUrl(page.path, navPage.link, navPage.title, params);
+        makeUrl(navPage.link, navPage.title, params);
         document.write('<div class="dropdown-menu" aria-labelledby="navbarDropdown">');
           navClass = 'dropdown-item';			
           navPage.children.forEach(child => {
             if (child.title == "divider"){
               document.write('<div class="dropdown-divider"></div>');
             } else {
-              makeUrl(page.path, child.link, child.title, {class: navClass});
+              makeUrl(child.link, child.title, {class: navClass});
             }
           });
         document.write('</div>');
 			document.write('</li>');
     } else {  
       document.write('<li class="' + navClass + '">');
-			makeUrl(page.path, navPage.link, isCurrentPage(navPage.title, parent), {class: 'nav-link'});
+			makeUrl(navPage.link, isCurrentPage(navPage.title, parent), {class: 'nav-link'});
 			document.write('</li>');
     }
   }); // End nav.forEach(page)
