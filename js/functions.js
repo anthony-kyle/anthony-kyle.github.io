@@ -77,7 +77,19 @@ nav = [
         link: "/dvd-bounce/",
       },
       {
+        title: "Color Swatch",
+        link: "/colorSwatch/",
+      },
+      {
+        title: "The Great RGB Color Game",
+        link: "/colorGame/",
+      },
+      {
         title: "divider"
+      },
+      {
+        title: "Patatap",
+        link: "/patatap/",
       },
       {
         title: "Minesweeper",
