@@ -81,15 +81,15 @@ nav = [
         link: "/colorSwatch/",
       },
       {
-        title: "The Great RGB Color Game",
-        link: "/colorGame/",
-      },
-      {
         title: "divider"
       },
       {
         title: "Patatap",
         link: "/patatap/",
+      },
+      {
+        title: "The Great RGB Color Game",
+        link: "/colorGame/",
       },
       {
         title: "Minesweeper",
