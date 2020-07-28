@@ -220,9 +220,39 @@ header {
 	position: relative;
 	padding-bottom: 1.5em;
 }
+
+.blogDate {
+	font-weight: normal;
+	font-size: 1em;
+	color: var(--brand-half);
+	border-bottom: solid 1px var(--theme-bg);
+	text-align: right;
+	margin: -1.8em 0 1.6em 0;
+}
+
 .reference {
+	border-top: solid 1px var(--theme-bg);
 	vertical-align: super;
 	font-size: smaller;
+}
+
+.reference h2 {
+	font-size: 1em;
+	font-weight: normal;
+	border-bottom: solid 1px var(--theme-bg);
+}
+
+.reference a {
+	text-decoration: underline;
+	transition: all 0.2s linear;
+}
+
+.reference a:hover {
+	background-color: var(--theme-bg);
+}
+
+.reference, .reference h2, .reference a {
+	color: var(--brand-half);
 }
 
 .example {
@@ -296,6 +326,25 @@ header {
 /************************************************
 /* Image manipulation 
 /***********************************************/
+
+figure {
+	background-color: var(--overlay-mid-white);
+	border-radius: 5%;
+	margin-left: 1.5em;
+	float: right;
+	max-width: 30%;
+	min-width: 250px;
+	box-shadow: 2px 2px 4px var(--overlay-semi-black);
+}
+
+figure img {
+	border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
+}
+
+figcaption {
+	text-align: center;
+}
 
 .image {
 	width: 220px;
