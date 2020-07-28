@@ -166,11 +166,11 @@ function getEntry(entry){
   let content = ''; // var to store entry HTML as defined
 
   if (entryFormat === true){ 
-    content += '<div class="container-fluid pt-5 pb-5">';
+    content += '<div class="container-fluid py-5">';
   } // current object is full width
 
   // Base container plus padding if not full width
-  content += '<div class="entry container' + (entryFormat === false ? ' pt-5 pb-5' : '') + '">'; 
+  content += '<div class="entry container' + (entryFormat === false ? ' py-5' : '') + '">'; 
 
   if (entry.imgSrc &&  entry.imgSrc != ''){
     content += '<img class="entryImg" src="' + entry.imgSrc + '" alt="' + (entry.imgAlt ? entry.imgAlt : '') + '">';
