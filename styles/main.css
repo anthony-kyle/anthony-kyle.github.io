@@ -225,9 +225,9 @@ header {
 	font-weight: normal;
 	font-size: 1em;
 	color: var(--brand-half);
-	border-bottom: solid 1px var(--theme-bg);
+	border-top: solid 1px var(--theme-bg);
+	margin-bottom: 1.6em;
 	text-align: right;
-	margin: -1.8em 0 1.6em 0;
 }
 
 .reference {
